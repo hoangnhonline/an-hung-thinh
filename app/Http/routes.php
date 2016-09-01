@@ -88,6 +88,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::get('{id}/edit',   ['as' => 'product.edit', 'uses' => 'ProductController@edit']);
         Route::post('/update', ['as' => 'product.update', 'uses' => 'ProductController@update']);
         Route::get('{id}/destroy', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy']);
+    });
+    Route::group(['prefix' => 'pages'], function () {
+        Route::get('/', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
+        Route::get('/create', ['as' => 'pages.create', 'uses' => 'PagesController@create']);
+        Route::post('/store', ['as' => 'pages.store', 'uses' => 'PagesController@store']);
+        Route::get('{id}/edit',   ['as' => 'pages.edit', 'uses' => 'PagesController@edit']);
+        Route::post('/update', ['as' => 'pages.update', 'uses' => 'PagesController@update']);
+        Route::get('{id}/destroy', ['as' => 'pages.destroy', 'uses' => 'PagesController@destroy']);
     });  
     Route::group(['prefix' => 'category'], function () {
         Route::get('/{parent_id?}', ['as' => 'category.index', 'uses' => 'CategoryController@index'])->where('parent_id', '[0-9]+');
