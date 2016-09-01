@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Helpers\Helper;
 use App\Models\Backend\Settings;
-use File, Session, DB;
+use File, Session, DB, Auth;
 
 class SettingsController  extends Controller
 {
@@ -46,7 +46,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('nghien.upload_path').$dataArr['logo'], config('nghien.upload_path').$destionation);
+            File::move(config('anhungthinh.upload_path').$dataArr['logo'], config('anhungthinh.upload_path').$destionation);
             
             $dataArr['logo'] = $destionation;
         }
@@ -61,7 +61,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('nghien.upload_path').$dataArr['favicon'], config('nghien.upload_path').$destionation);
+            File::move(config('anhungthinh.upload_path').$dataArr['favicon'], config('anhungthinh.upload_path').$destionation);
             
             $dataArr['favicon'] = $destionation;
         }
@@ -76,7 +76,7 @@ class SettingsController  extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('nghien.upload_path').$dataArr['banner'], config('nghien.upload_path').$destionation);
+            File::move(config('anhungthinh.upload_path').$dataArr['banner'], config('anhungthinh.upload_path').$destionation);
             
             $dataArr['banner'] = $destionation;
         }        
