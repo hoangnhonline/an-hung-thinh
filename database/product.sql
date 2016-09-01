@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2016 at 08:44 AM
+-- Generation Time: Sep 01, 2016 at 08:53 AM
 -- Server version: 5.6.30-1+deb.sury.org~wily+2
 -- PHP Version: 7.0.9-1+deb.sury.org~wily+1
 
@@ -34,6 +34,7 @@ CREATE TABLE `product` (
   `content` text,
   `image_url` varchar(255) NOT NULL,
   `price` varchar(20) NOT NULL,
+  `is_hot` tinyint(1) NOT NULL DEFAULT '0',
   `slug` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `meta_title` varchar(255) DEFAULT NULL,
