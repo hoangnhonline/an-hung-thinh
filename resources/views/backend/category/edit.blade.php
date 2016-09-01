@@ -40,15 +40,7 @@
                       </ul>
                   </div>
               @endif
-               <div class="form-group">
-                  <label>Danh mục cha</label>
-                  <select class="form-control" name="parent_id" id="parent_id">                  
-                    <option value="0" {{ $detail->parent_id == 0 ? "selected" : "" }}>--chọn--</option>
-                    @foreach( $parentCateArr as $value )
-                    <option value="{{ $value->id }}" {{ ( $detail->parent_id == $value->id ) ? "selected" : "" }}>{{ $value->name }}</option>
-                    @endforeach
-                  </select>
-                </div> 
+                
                <!-- text input -->
               <div class="form-group">
                 <label>Tên danh mục <span class="red-star">*</span></label>
@@ -64,15 +56,6 @@
                 <textarea class="form-control" rows="4" name="description" id="description">{{ $detail->description }}</textarea>
               </div>            
 
-              
-              <div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="is_hot" value="1" {{ $detail->is_hot == 1 ? "checked" : "" }}>
-                    Danh mục nổi bật
-                  </label>
-                </div>               
-              </div>
               <div class="form-group">
                 <label>Ẩn/hiện</label>
                 <select class="form-control" name="status" id="status">                  
