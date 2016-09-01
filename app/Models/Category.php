@@ -23,13 +23,11 @@ class Category extends Model  {
      *
      * @var array
      */
-    protected $fillable = ['parent_id', 'type', 'name', 'description', 'priority', 'slug', 'keywords', 'thumb', 'created_user', 'updated_user', 'status', 'is_hot', 'alias', 'meta_title', 'meta_description', 'meta_keywords', 'custom_text'];
+    protected $fillable = ['name', 'description', 'priority', 'slug', 'keywords', 'thumb', 'created_user', 'updated_user', 'status', 'alias', 'meta_title', 'meta_description', 'meta_keywords', 'custom_text'];
 
     public static function getParentCateList( $type ){
         
-        $parentCate = Category::where('parent_id', 0)
-                    ->where('type', $type)
-                    ->orderBy('display_order')
+        $parentCate = Category::orderBy('display_order')
                     ->get();
                     
         return $parentCate;

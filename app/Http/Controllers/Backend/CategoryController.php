@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Helper, File, Session;
+use Helper, File, Session, Auth;
 
 class CategoryController extends Controller
 {
@@ -18,11 +18,10 @@ class CategoryController extends Controller
     */
     public function index(Request $request)
     {  
-        $items = Category::where('type', 1)->orderBy('display_order')->get();        
+        $items = Category::orderBy('display_order')->get();        
         
-        $parentCate = Category::where(['parent_id' => 0, 'type' => 1])->orderBy('display_order')->get();
         
-        return view('backend.category.index', compact( 'items', 'parentCate'));
+        return view('backend.category.index', compact( 'items'));
     }
 
     public function ajaxListByParent(Request $request)
@@ -31,7 +30,7 @@ class CategoryController extends Controller
 
         $type = isset($request->type) ? $request->type : 'form';        
         
-        $items = Category::where('parent_id', $parent_id)->orderBy('display_order')->get();        
+        $items = Category::orderBy('display_order')->get();        
         
         return view('backend.category.ajax-list-by-parent', compact( 'items', 'type' ));
     }
@@ -43,7 +42,7 @@ class CategoryController extends Controller
     */
     public function create()
     {         
-        $parentCate = Category::where('parent_id', 0)->where('type', 1)->orderBy('display_order')->get();
+        $parentCate = Category::orderBy('display_order')->get();
 
         return view('backend.category.create', compact('parentCate'));
     }
