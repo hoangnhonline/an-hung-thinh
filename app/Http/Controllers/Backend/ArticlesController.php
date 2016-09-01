@@ -140,7 +140,7 @@ class ArticlesController extends Controller
         
         $cateArr = ArticlesCate::all();        
 
-        $tmpArr = TagObjects::where(['object_type' => 1, 'object_id' => $id])->get();
+        $tmpArr = TagObjects::where(['type' => 1, 'object_id' => $id])->get();
         
         if( $tmpArr->count() > 0 ){
             foreach ($tmpArr as $value) {
@@ -188,7 +188,7 @@ class ArticlesController extends Controller
 
             $destionation = date('Y/m/d'). '/'. end($tmp);
             
-            File::move(config('nghien.upload_path').$dataArr['image_url'], config('nghien.upload_path').$destionation);
+            File::move(config('anhungthinh.upload_path').$dataArr['image_url'], config('anhungthinh.upload_path').$destionation);
             
             $dataArr['image_url'] = $destionation;
         }
@@ -199,11 +199,11 @@ class ArticlesController extends Controller
 
         $model->update($dataArr);
 
-        TagObjects::where(['object_id' => $dataArr['id'], 'object_type' => 2])->delete();
+        TagObjects::where(['object_id' => $dataArr['id'], 'type' => 2])->delete();
         // xu ly tags
         if( !empty( $dataArr['tags'] ) ){
             foreach ($dataArr['tags'] as $tag_id) {
-                TagObjects::create(['object_id' => $dataArr['id'], 'tag_id' => $tag_id, 'object_type' => 2]);
+                TagObjects::create(['object_id' => $dataArr['id'], 'tag_id' => $tag_id, 'type' => 2]);
             }
         }
         Session::flash('message', 'Cập nhật tin tức thành công');        
