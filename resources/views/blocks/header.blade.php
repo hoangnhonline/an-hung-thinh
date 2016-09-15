@@ -15,24 +15,22 @@
   <div id="menutop">
     <div class="menu clearfix" id="cssmenu">
       <ul>
-        <li><a href="index-2.html" class="font_custom active">Trang chủ</a></li>
+        <li><a href="./" class="font_custom active">Trang chủ</a></li>
         <li class="line">&nbsp;</li>
-        <li><a href="gioi-thieu.html" class="font_custom ">Giới thiệu</a></li>
+        <li><a href="gioi-thieu" class="font_custom ">Giới thiệu</a></li>
         <li class="line">&nbsp;</li>
-        <li><a href="san-pham.html" class="font_custom ">Sản phẩm</a>
+        <li><a href="san-pham" class="font_custom ">Sản phẩm</a>
           <ul>
-            <li><a href="san-pham/da-granite-l20.html">ĐÁ GRANITE</a> </li>
-            <li><a href="san-pham/da-nhan-tao-l23.html">ĐÁ NHÂN TẠO</a> </li>
-            <li><a href="san-pham/da-marble-l2.html">ĐÁ MARBLE</a> </li>
-            <li><a href="san-pham/da-cam-thach-l24.html">ĐÁ CẨM THẠCH</a> </li>
+            <?php 
+            $loaisp = DB::table('category')->get();
+            ?>
+            @foreach($loaisp as $row)
+            <li><a href="{!! $row->slug !!}-{!! $row->id !!}">{!! $row->name !!}</a> </li>
+            @endforeach
           </ul>
         </li>
         <li class="line">&nbsp;</li>
-        <li><a href="bao-gia.html" class="font_custom ">Báo giá</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="thi-cong.html" class="font_custom ">Thi công</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="lien-he.html" class="font_custom ">Liên hệ</a></li>
+        <li><a href="lien-he" class="font_custom ">Liên hệ</a></li>
         <div class="box_search">
           <input type="button" value=" " onclick="onSearch(event, 'keyword')" />
           <input type="text" name="keyword" id="keyword" value="Tìm kiếm..." onblur="textboxChange(this,false,'Tìm kiếm...')" onfocus="textboxChange(this,true,'Tìm kiếm...')" onkeypress="doEnter(event,'keyword');"/>

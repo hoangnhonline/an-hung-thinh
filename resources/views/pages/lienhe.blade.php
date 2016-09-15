@@ -1,3 +1,5 @@
+@extends('master')
+@section('content')
 <div id="wrapper">
               <div class="box_slider"></div>                                 
                      
@@ -582,3 +584,4 @@ function js_submit(){
                     </div>
                 <div class="clear"></div>
       </div>
+@endsection
