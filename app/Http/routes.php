@@ -10,21 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::group(['namespace' => 'Frontend'], function()
-{
-    Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('/lien-he', ['as' => 'lienhe', 'uses' => 'HomeController@lienhe']);
-    Route::get('/san-pham', ['as' => 'san-pham', 'uses' => 'HomeController@sanpham']);
-    Route::get('/gioi-thieu', ['as' => 'gioithieu', 'uses' => 'HomeController@gioithieu']);
-    Route::get('{slug}-{id}', ['as' => 'loaisp', 'uses' => 'HomeController@loaisp']);
-    Route::get('{slug}-{id}', ['as' => 'chitietsp', 'uses' => 'HomeController@chitietsp']);
-});
-
-
-// Authentication routes...
-Route::get('backend/login', ['as' => 'backend.login-form', 'uses' => 'Backend\UserController@loginForm']);
-Route::post('backend/login', ['as' => 'backend.check-login', 'uses' => 'Backend\UserController@checkLogin']);
-Route::get('backend/logout', ['as' => 'backend.logout', 'uses' => 'Backend\UserController@logout']);
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => 'isAdmin'], function()
 {
@@ -142,8 +127,23 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::post('/update', ['as' => 'tag.update', 'uses' => 'TagController@update']);
         Route::get('{id}/destroy', ['as' => 'tag.destroy', 'uses' => 'TagController@destroy']);
     });
- 	Route::post('/tmp-upload', ['as' => 'image.tmp-upload', 'uses' => 'UploadController@tmpUpload']);
+    Route::post('/tmp-upload', ['as' => 'image.tmp-upload', 'uses' => 'UploadController@tmpUpload']);
     Route::post('/update-order', ['as' => 'update-order', 'uses' => 'GeneralController@updateOrder']);
     Route::post('/get-slug', ['as' => 'get-slug', 'uses' => 'GeneralController@getSlug']);
     Route::post('/get-film-external', ['as' => 'general.get-film-external', 'uses' => 'GeneralController@getFilmExternal']);
 });
+Route::group(['namespace' => 'Frontend'], function()
+{
+    Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('/lien-he', ['as' => 'lienhe', 'uses' => 'HomeController@lienhe']);
+    Route::get('/san-pham', ['as' => 'san-pham', 'uses' => 'HomeController@sanpham']);
+    Route::get('/gioi-thieu', ['as' => 'gioithieu', 'uses' => 'HomeController@gioithieu']);
+    Route::get('{slug}-{id}', ['as' => 'loaisp', 'uses' => 'HomeController@loaisp']);
+    Route::get('san-pham/{slug}-{id}.html', ['as' => 'chitietsp', 'uses' => 'HomeController@chitietsp']);
+});
+
+
+// Authentication routes...
+Route::get('backend/login', ['as' => 'backend.login-form', 'uses' => 'Backend\UserController@loginForm']);
+Route::post('backend/login', ['as' => 'backend.check-login', 'uses' => 'Backend\UserController@checkLogin']);
+Route::get('backend/logout', ['as' => 'backend.logout', 'uses' => 'Backend\UserController@logout']);
