@@ -35,9 +35,11 @@ class HomeController extends Controller
         $tensp = DB::table('product')->where('cate_id',$id)->get();
         return view('pages.loaisp', compact('tenloaisp', 'tensp'));
     }
-    public function chitietsp($id, $slug)
+    public function chitietsp(Request $request)
     {
-        $chitietsp = DB::table('product')->where('id',$id)->where('slug',$slug)->get();
+        
+        $chitietsp = DB::table('product')->where('id',$id = $request->id)->get();
+        
         
         return view('pages.chitiet', compact('chitietsp'));
     }
