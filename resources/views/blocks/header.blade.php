@@ -1,13 +1,13 @@
-<div id="header" style="background:url('images/16543300.png') no-repeat;background-size: 100% 100%;">
-    <div class="banner"> <img src="images/an-hung-thinh-banner.png" style="width:100%;" alt="http://dahoacuong.co/"/>
-      <div class="logo_header"> <a href="#"> <img src="images/logo.png" height="100"> </a> </div>
+<div id="header" style="background:url('{{ URL::asset('images/16543300.png') }}') no-repeat;background-size: 100% 100%;">
+    <div class="banner"> <img src="{{ URL::asset('images/an-hung-thinh-banner.png') }}" style="width:100%;" alt="http://dahoacuong.co/"/>
+      <div class="logo_header"> <a href="./"> <img src="{{ URL::asset('images/logo.png') }}" height="100"> </a> </div>
       <div class="hotline" >093.857.8439</div>
       <div class="box_icon">
         <div class="title">Follow us: </div>
-        <div class="icon"> <a href="https://www.facebook.com/" target="_blank"> <img src="images/ico-face.png" alt="Facebook" /> </a> </div>
-        <div class="icon"> <a href="https://twitter.com/" target="_blank"> <img src="images/ico-tw.png" alt="Twitter" /> </a> </div>
-        <div class="icon"> <a href="https://www.google.com/" target="_blank"> <img src="images/ico-google.png" alt="Google" /> </a> </div>
-        <div class="icon"> <a href="https://www.youtube.com/?gl=VN" target="_blank"> <img src="images/ico-youtube.png" alt="Youtube" /> </a> </div>
+        <div class="icon"> <a href="https://www.facebook.com/" target="_blank"> <img src="{{ URL::asset('images/ico-face.png') }}" alt="Facebook" /> </a> </div>
+        <div class="icon"> <a href="https://twitter.com/" target="_blank"> <img src="{{ URL::asset('images/ico-tw.png') }}" alt="Twitter" /> </a> </div>
+        <div class="icon"> <a href="https://www.google.com/" target="_blank"> <img src="{{ URL::asset('images/ico-google.png') }}" alt="Google" /> </a> </div>
+        <div class="icon"> <a href="https://www.youtube.com/?gl=VN" target="_blank"> <img src="{{ URL::asset('images/ico-youtube.png') }}" alt="Youtube" /> </a> </div>
         <div class="clear"></div>
       </div>
     </div>
@@ -17,20 +17,20 @@
       <ul>
         <li><a href="./" class="font_custom active">Trang chủ</a></li>
         <li class="line">&nbsp;</li>
-        <li><a href="gioi-thieu" class="font_custom ">Giới thiệu</a></li>
+        <li><a href="{!! url('gioi-thieu') !!}" class="font_custom ">Giới thiệu</a></li>
         <li class="line">&nbsp;</li>
-        <li><a href="san-pham" class="font_custom ">Sản phẩm</a>
+        <li><a href="{!! url('san-pham') !!}" class="font_custom ">Sản phẩm</a>
           <ul>
             <?php 
             $loaisp = DB::table('category')->get();
             ?>
             @foreach($loaisp as $row)
-            <li><a href="{!! $row->slug !!}-{!! $row->id !!}">{!! $row->name !!}</a> </li>
+            <li><a href="{!! route('loaisp', [$row->slug, $row->id]) !!}">{!! $row->name !!}</a> </li>
             @endforeach
           </ul>
         </li>
         <li class="line">&nbsp;</li>
-        <li><a href="lien-he" class="font_custom ">Liên hệ</a></li>
+        <li><a href="{!! url('lien-he') !!}" class="font_custom ">Liên hệ</a></li>
         <div class="box_search">
           <input type="button" value=" " onclick="onSearch(event, 'keyword')" />
           <input type="text" name="keyword" id="keyword" value="Tìm kiếm..." onblur="textboxChange(this,false,'Tìm kiếm...')" onfocus="textboxChange(this,true,'Tìm kiếm...')" onkeypress="doEnter(event,'keyword');"/>
@@ -42,7 +42,7 @@
   
   <div class="header-mobi">
   
-      <div class="logo"> <a href="index.html" data-role="none" title="Trang chủ"> <img src="images/banner-mobi.jpg"> </a> </div>
+      <div class="logo"> <a href="index.html" data-role="none" title="Trang chủ"> <img src="{{ URL::asset('images/banner-mobi.jpg') }}"> </a> </div>
       
       <script>
         $(document).ready(function(){

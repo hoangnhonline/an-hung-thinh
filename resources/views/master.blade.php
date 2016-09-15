@@ -95,7 +95,7 @@
     });
 </script> 
 <!--End back to top-->
-<div class="scroll-top"> <img src="images/icon-scroll-top.png" alt="lên đầu trang" /> </div>
+<div class="scroll-top"> <img src="{{ URL::asset('images/icon-scroll-top.png') }}" alt="lên đầu trang" /> </div>
 <!--scroll-top-->
 
 </body>

@@ -5,11 +5,11 @@
             <h2>Danh mục sản phẩm</h2>
           </div>
           <div class="content" >
-            <link href="assets/menuleft_accordion/css/dcaccordion.css" rel="stylesheet" type="text/css" />
-            <link href="assets/menuleft_accordion/css/skins/blue.css" rel="stylesheet" type="text/css" />
-            <script type='text/javascript' src='assets/menuleft_accordion/js/jquery.cookie.js'></script> 
-            <script type='text/javascript' src='assets/menuleft_accordion/js/jquery.hoverIntent.minified.js'></script> 
-            <script type='text/javascript' src='assets/menuleft_accordion/js/jquery.dcjqaccordion.2.7.min.js'></script> 
+            <link href="{{ URL::asset('assets/menuleft_accordion/css/dcaccordion.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ URL::asset('assets/menuleft_accordion/css/skins/blue.css') }}" rel="stylesheet" type="text/css" />
+            <script type='text/javascript' src="{{ URL::asset('assets/menuleft_accordion/js/jquery.cookie.js') }}"></script> 
+            <script type='text/javascript' src="{{ URL::asset('assets/menuleft_accordion/js/jquery.hoverIntent.minified.js') }}"></script> 
+            <script type='text/javascript' src="{{ URL::asset('assets/menuleft_accordion/js/jquery.dcjqaccordion.2.7.min.js') }}"></script> 
             <script type="text/javascript">
     $(document).ready(function($){
       $('#accordion-6').dcAccordion({
@@ -30,7 +30,7 @@
                 $loaisp = DB::table('category')->get();
                 ?>
                 @foreach($loaisp as $row)
-                <li> <a href="{!! $row->slug !!}-{!! $row->id !!}">{!! $row->name !!}</a> </li>
+                <li> <a href="{!! route('loaisp', [$row->slug, $row->id]) !!}">{!! $row->name !!}</a> </li>
                 @endforeach
               </ul>
             </div>
@@ -52,8 +52,8 @@
             <div class="box-hotro" >
               <div class="box-icon clearfix">
                 <div class="namehotro"> <span>Mr. Tuấn</span> </div>
-                <div class="ico-yahoo">Yahoo: <a href="ymsgr:sendim?"><img src="images/ico-yahoo.png"  alt="Mr. Tuấn"/></a></div>
-                <div class="ico-sky">Skyper: <a href="Skype:?chat"><img src="images/ico-sky.png"  alt="Mr. Tuấn"/> </a></div>
+                <div class="ico-yahoo">Yahoo: <a href="ymsgr:sendim?"><img src="{{ URL::asset('images/ico-yahoo.png') }}"  alt="Mr. Tuấn"/></a></div>
+                <div class="ico-sky">Skyper: <a href="Skype:?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="Mr. Tuấn"/> </a></div>
                 <div class="clear"></div>
               </div>
             </div>
@@ -61,8 +61,8 @@
             <div class="box-hotro" style="border-bottom:none;">
               <div class="box-icon clearfix">
                 <div class="namehotro"> <span>Ms. Trang</span> </div>
-                <div class="ico-yahoo">Yahoo: <a href="ymsgr:sendim?huyentrang1111.hcm@yahoo.com"><img src="images/ico-yahoo.png"  alt="Ms. Trang"/></a></div>
-                <div class="ico-sky">Skyper: <a href="Skype:huyentrang1111?chat"><img src="images/ico-sky.png"  alt="Ms. Trang"/> </a></div>
+                <div class="ico-yahoo">Yahoo: <a href="ymsgr:sendim?huyentrang1111.hcm@yahoo.com"><img src="{{ URL::asset('images/ico-yahoo.png') }}"  alt="Ms. Trang"/></a></div>
+                <div class="ico-sky">Skyper: <a href="Skype:huyentrang1111?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="Ms. Trang"/> </a></div>
                 <div class="clear"></div>
               </div>
             </div>
@@ -109,11 +109,11 @@
                   <!-- <a href="san-pham/dahoacuongco-40" title="dahoacuong.co">dahoacuong.co</a>--> 
                 </div>
                 <div class="boxpronew">
-                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/58220510.jpg"><img src="upload/hinhanh/58220510.jpg" alt="dahoacuong.co"></a> </div>
+                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/58220510.jpg"><img src="{{ URL::asset('upload/hinhanh/58220510.jpg') }}" alt="dahoacuong.co"></a> </div>
                   <!-- <a href="san-pham/dahoacuongco-39" title="dahoacuong.co">dahoacuong.co</a>--> 
                 </div>
                 <div class="boxpronew">
-                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/10951532.jpg"><img src="upload/hinhanh/10951532.jpg" alt="dahoacuong.co"></a> </div>
+                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/10951532.jpg"><img src="{{ URL::asset('upload/hinhanh/10951532.jpg') }}" alt="dahoacuong.co"></a> </div>
                   <!-- <a href="san-pham/dahoacuongco-38" title="dahoacuong.co">dahoacuong.co</a>--> 
                 </div>
               </div>

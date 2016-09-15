@@ -11,11 +11,10 @@
       <div class="footer-news-list">
         <h3 class="footer-box-tit">Thông tin</h3>
         <ul>
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Giới thiệu</a></li>
-          <li><a href="#">Sản phẩm</a></li>
-          <li><a href="#">Thi công</a></li>
-          <li><a href="#">Liên hệ</a></li>
+          <li><a href="./">Trang chủ</a></li>
+          <li><a href="{!! url('gioi-thieu') !!}">Giới thiệu</a></li>
+          <li><a href="{!! url('san-pham') !!}">Sản phẩm</a></li>
+          <li><a href="{!! url('lien-he') !!}">Liên hệ</a></li>
         </ul>
       </div>
       <div class="footer_mid">
