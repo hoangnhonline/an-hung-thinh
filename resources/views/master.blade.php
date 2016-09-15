@@ -67,12 +67,11 @@
 
 <body >
 <div id="bg_page">
-  <!-- HEADER -->
+  <!-- HEADER -->@include('blocks.header')
   
-  <!-- CONTENT -->
+  <!-- CONTENT -->@yield('content')
   
-  
-  <!-- FOOTER -->
+  <!-- FOOTER -->@include('blocks.footer')
 
 <!--Back to Top--> 
 <script type="text/javascript">

@@ -26,10 +26,12 @@
 </script>
             <div class="blue boxmenuleft">
               <ul class="accordion"  id="accordion-6">
-                <li> <a href="san-pham/da-granite-l20.html">ĐÁ GRANITE</a> </li>
-                <li> <a href="san-pham/da-nhan-tao-l23.html">ĐÁ NHÂN TẠO</a> </li>
-                <li> <a href="san-pham/da-marble-l2.html">ĐÁ MARBLE</a> </li>
-                <li> <a href="san-pham/da-cam-thach-l24.html">ĐÁ CẨM THẠCH</a> </li>
+                <?php 
+                $loaisp = DB::table('category')->get();
+                ?>
+                @foreach($loaisp as $row)
+                <li> <a href="{!! $row->slug !!}-{!! $row->id !!}">{!! $row->name !!}</a> </li>
+                @endforeach
               </ul>
             </div>
             <div class="clear"></div>
