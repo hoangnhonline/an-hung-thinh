@@ -224,7 +224,7 @@
       });
       
       
-      $('#title').change(function(){
+      $('#name').change(function(){
          var name = $.trim( $(this).val() );
          if( name != '' && $('#slug').val() == ''){
             $.ajax({
