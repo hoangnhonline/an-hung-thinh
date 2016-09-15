@@ -13,19 +13,11 @@
 Route::group(['namespace' => 'Frontend'], function()
 {
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('/tin-tuc', ['as' => 'news-list', 'uses' => 'HomeController@newsList']);
-    Route::post('/get-link', ['as' => 'get-link', 'uses' => 'DetailController@getLink']);
-    Route::get('/streaming/{encodeLink}', ['as' => 'streaming', 'uses' => 'DetailController@streaming']);
-    Route::get('/load-tab', ['as' => 'ajax-tab', 'uses' => 'HomeController@ajaxTab']);
-    Route::get('{slugName}.html', ['as' => 'detail', 'uses' => 'DetailController@index']);
-    Route::get('/tin-tuc/{slug}-{id}.html', ['as' => 'news-detail', 'uses' => 'HomeController@newsDetail']);
-    Route::get('{slugName}/{slugEpisode}.html', ['as' => 'detail-tap-phim', 'uses' => 'DetailController@index']);
-
-    Route::get('{slug}', ['as' => 'cate', 'uses' => 'HomeController@cate']);
-    Route::get('/movies-info/{movies_id}', ['as' => 'movies-info', 'uses' => 'DetailController@ajaxMoviesInfo']);
-
-    Route::get('/download', ['as' => 'download', 'uses' => 'DetailController@download']);
-    Route::get('/tim-kiem.html', ['as' => 'search', 'uses' => 'HomeController@search']);
+    Route::get('/lien-he', ['as' => 'lienhe', 'uses' => 'HomeController@lienhe']);
+    Route::get('/san-pham', ['as' => 'san-pham', 'uses' => 'HomeController@sanpham']);
+    Route::get('/gioi-thieu', ['as' => 'gioithieu', 'uses' => 'HomeController@gioithieu']);
+    Route::get('{slug}-{id}', ['as' => 'loaisp', 'uses' => 'HomeController@loaisp']);
+    Route::get('{slug}-{id}', ['as' => 'chitietsp', 'uses' => 'HomeController@chitietsp']);
 });
 
 
@@ -154,5 +146,4 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
     Route::post('/update-order', ['as' => 'update-order', 'uses' => 'GeneralController@updateOrder']);
     Route::post('/get-slug', ['as' => 'get-slug', 'uses' => 'GeneralController@getSlug']);
     Route::post('/get-film-external', ['as' => 'general.get-film-external', 'uses' => 'GeneralController@getFilmExternal']);
-    
 });
