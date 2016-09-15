@@ -37,9 +37,9 @@ class HomeController extends Controller
     }
     public function chitietsp(Request $request)
     {
-        
-        $chitietsp = DB::table('product')->where('id',$id = $request->id)->get();
-        
+        $id = $request->id;
+
+        $chitietsp = DB::table('product')->where('id', $id)->get();        
         
         return view('pages.chitiet', compact('chitietsp'));
     }
