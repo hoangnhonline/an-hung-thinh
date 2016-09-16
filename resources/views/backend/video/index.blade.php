@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Hình ảnh
+    Video
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{ route( 'images.index' ) }}">Hình ảnh</a></li>
+    <li><a href="{{ route( 'video.index' ) }}">Video</a></li>
     <li class="active">Danh sách</li>
   </ol>
 </section>
@@ -20,48 +20,25 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('images.create') }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('video.create') }}" class="btn-sm btn btn-info" style="margin-bottom:5px">Tạo mới</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
-        </div>
-        <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('images.index') }}">            
-            <div class="form-group">
-              <label for="email">Album </label>
-              <select class="form-control select2" name="cate_id" id="cate_id">
-                <option value="">--Tất cả--</option>
-                @if( $cateArr->count() > 0)
-                  @foreach( $cateArr as $value )
-                  <option value="{{ $value->id }}" {{ $value->id == $album_id ? "selected" : "" }}>{{ $value->name }}</option>
-                  @endforeach
-                @endif
-              </select>
-            </div>            
-            <div class="form-group">
-              <label for="email">Từ khóa :</label>
-              <input type="text" class="form-control" name="title" value="{{ $title }}">
-            </div>
-            <button type="submit" class="btn btn-default">Lọc</button>
-          </form>         
-        </div>
+        </div>        
       </div>
       <div class="box">
 
         <div class="box-header with-border">
-          <h3 class="box-title">Danh sách ( <span class="value">{{ $items->total() }} hình )</span></h3>
+          <h3 class="box-title">Danh sách</h3>
         </div>
         
         <!-- /.box-header -->
         <div class="box-body">
-          <div style="text-align:center">
-            {{ $items->appends( ['album_id' => $album_id] )->links() }}
-          </div>  
           <table class="table table-bordered" id="table-list-data">
             <tr>
-              <th style="width: 1%">#</th>              
-              <th>Thumbnail</th>
-              <th>Album</th>
+              <th style="width: 1%">#</th>
+              <th style="width: 1%;white-space:nowrap">Thứ tự</th>
+              <th>Tên</th>          
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -70,17 +47,13 @@
               @foreach( $items as $item )
                 <?php $i ++; ?>
               <tr id="row-{{ $item->id }}">
-                <td><span class="order">{{ $i }}</span></td>       
-                <td>
-                  <img class="img-thumbnail lazy" data-original="{{ Helper::showImage($item->image_url)}}" width="145">
-                </td>        
-                <td>
-                  <?php
-                    $tenalbum = DB::table('album')->where('id', $item->album_id)->get();
-                  ?>
-                  @foreach($tenalbum as $row)                  
-                  <a href="{{ route( 'images.edit', [ 'id' => $item->id ]) }}">{{ $row->name }}</a>
-                  @endforeach
+                <td><span class="order">{{ $i }}</span></td>
+                <td style="vertical-align:middle;text-align:center">
+                  <img src="{{ URL::asset('be/dist/img/move.png')}}" class="move img-thumbnail" alt="Cập nhật thứ tự"/>
+                </td>
+                <td>                  
+                  <a href="{{ route( 'video.edit', [ 'id' => $item->id ]) }}">{{ $item->name }}</a>
+                  
                   @if( $item->is_hot == 1 )
                   <img class="img-thumbnail" src="{{ URL::asset('be/dist/img/star.png')}}" alt="Nổi bật" title="Nổi bật" />
                   @endif
@@ -88,9 +61,9 @@
                   <p>{{ $item->description }}</p>
                 </td>
                 <td style="white-space:nowrap">                  
-                  <a href="{{ route( 'images.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning">Chỉnh sửa</a>                 
+                  <a href="{{ route( 'video.edit', [ 'id' => $item->id ]) }}" class="btn-sm btn btn-warning">Chỉnh sửa</a>                 
                   
-                  <a onclick="return callDelete('{{ $item->title }}','{{ route( 'images.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger">Xóa</a>
+                  <a onclick="return callDelete('{{ $item->name }}','{{ route( 'video.destroy', [ 'id' => $item->id ]) }}');" class="btn-sm btn btn-danger">Xóa</a>
                   
                 </td>
               </tr> 
@@ -103,9 +76,6 @@
 
           </tbody>
           </table>
-          <div style="text-align:center">
-            {{ $items->appends( ['album_id' => $album_id] )->links() }}
-          </div>  
         </div>        
       </div>
       <!-- /.box -->     
@@ -117,7 +87,6 @@
 </div>
 @stop
 @section('javascript_page')
-<script src="{{ URL::asset('assets/js/lazy.js') }}"></script>
 <script type="text/javascript">
 function callDelete(name, url){  
   swal({
@@ -134,23 +103,6 @@ function callDelete(name, url){
   return flag;
 }
 $(document).ready(function(){
-  $('img.lazy').lazyload();
-  $('#parent_id').change(function(){
-    $.ajax({
-        url: $('#route_get_cate_by_parent').val(),
-        type: "POST",
-        async: false,
-        data: {          
-            parent_id : $(this).val(),
-            type : 'list'
-        },
-        success: function(data){
-            $('#cate_id').html(data).select2('refresh');                      
-        }
-    });
-  });
-  $('.select2').select2();
-
   $('#table-list-data tbody').sortable({
         placeholder: 'placeholder',
         handle: ".move",

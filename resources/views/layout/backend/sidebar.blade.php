@@ -54,7 +54,7 @@
         </ul>
       </li>
       <li class="treeview">
-        <a href="">
+        <a href="{{ route('video.index') }}">
           <i class="fa fa-th"></i> <span>Video</span>         
         </a>        
       </li>
