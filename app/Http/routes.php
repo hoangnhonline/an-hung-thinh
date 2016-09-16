@@ -101,6 +101,16 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::get('{id}/edit',   ['as' => 'album.edit', 'uses' => 'AlbumController@edit']);
         Route::post('/update', ['as' => 'album.update', 'uses' => 'AlbumController@update']);
         Route::get('{id}/destroy', ['as' => 'album.destroy', 'uses' => 'AlbumController@destroy']);
+    });
+    Route::group(['prefix' => 'video'], function () {
+        Route::get('/{parent_id?}', ['as' => 'video.index', 'uses' => 'VideoController@index'])->where('parent_id', '[0-9]+');
+        Route::get('/create', ['as' => 'video.create', 'uses' => 'VideoController@create']);
+        Route::post('/store', ['as' => 'video.store', 'uses' => 'VideoController@store']);
+        Route::post('/ajax-list-by-parent', ['as' => 'video.ajax-list-by-parent', 'uses' => 'VideoController@ajaxListByParent']);
+        
+        Route::get('{id}/edit',   ['as' => 'video.edit', 'uses' => 'VideoController@edit']);
+        Route::post('/update', ['as' => 'video.update', 'uses' => 'VideoController@update']);
+        Route::get('{id}/destroy', ['as' => 'video.destroy', 'uses' => 'VideoController@destroy']);
     });  
     Route::group(['prefix' => 'settings'], function () {
         Route::get('/', ['as' => 'settings.index', 'uses' => 'SettingsController@index']);
