@@ -66,6 +66,14 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::post('/update', ['as' => 'product.update', 'uses' => 'ProductController@update']);
         Route::get('{id}/destroy', ['as' => 'product.destroy', 'uses' => 'ProductController@destroy']);
     });
+    Route::group(['prefix' => 'images'], function () {
+        Route::get('/', ['as' => 'images.index', 'uses' => 'ImagesController@index']);
+        Route::get('/create', ['as' => 'images.create', 'uses' => 'ImagesController@create']);
+        Route::post('/store', ['as' => 'images.store', 'uses' => 'ImagesController@store']);
+        Route::get('{id}/edit',   ['as' => 'images.edit', 'uses' => 'ImagesController@edit']);
+        Route::post('/update', ['as' => 'images.update', 'uses' => 'ImagesController@update']);
+        Route::get('{id}/destroy', ['as' => 'images.destroy', 'uses' => 'ImagesController@destroy']);
+    });
     Route::group(['prefix' => 'pages'], function () {
         Route::get('/', ['as' => 'pages.index', 'uses' => 'PagesController@index']);
         Route::get('/create', ['as' => 'pages.create', 'uses' => 'PagesController@create']);
@@ -83,7 +91,17 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
         Route::get('{id}/edit',   ['as' => 'category.edit', 'uses' => 'CategoryController@edit']);
         Route::post('/update', ['as' => 'category.update', 'uses' => 'CategoryController@update']);
         Route::get('{id}/destroy', ['as' => 'category.destroy', 'uses' => 'CategoryController@destroy']);
-    }); 
+    });
+    Route::group(['prefix' => 'album'], function () {
+        Route::get('/{parent_id?}', ['as' => 'album.index', 'uses' => 'AlbumController@index'])->where('parent_id', '[0-9]+');
+        Route::get('/create', ['as' => 'album.create', 'uses' => 'AlbumController@create']);
+        Route::post('/store', ['as' => 'album.store', 'uses' => 'AlbumController@store']);
+        Route::post('/ajax-list-by-parent', ['as' => 'album.ajax-list-by-parent', 'uses' => 'AlbumController@ajaxListByParent']);
+        
+        Route::get('{id}/edit',   ['as' => 'album.edit', 'uses' => 'AlbumController@edit']);
+        Route::post('/update', ['as' => 'album.update', 'uses' => 'AlbumController@update']);
+        Route::get('{id}/destroy', ['as' => 'album.destroy', 'uses' => 'AlbumController@destroy']);
+    });  
     Route::group(['prefix' => 'settings'], function () {
         Route::get('/', ['as' => 'settings.index', 'uses' => 'SettingsController@index']);
         Route::post('/update', ['as' => 'settings.update', 'uses' => 'SettingsController@update']);     
