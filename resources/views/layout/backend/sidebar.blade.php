@@ -19,15 +19,14 @@
       <li class="header">MENU</li>
       <li class="active treeview">
         <a href="#">
-          <i class="fa fa-th"></i> <span>Quản lý phim</span>
+          <i class="fa fa-th"></i> <span>Quản lý sản phẩm</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="active"><a href="{{ route('film.index') }}"><i class="fa fa-circle-o"></i> Phim</a></li>
-          <li><a href="{{ route('category.index') }}"><i class="fa fa-circle-o"></i> Danh mục</a></li>
-          <li><a href="{{ route('country.index') }}"><i class="fa fa-circle-o"></i> Quốc gia</a></li>          
+          <li class="active"><a href="{{ route('category.index') }}"><i class="fa fa-circle-o"></i> Danh mục</a></li>
+          <li><a href="{{ route('product.index') }}"><i class="fa fa-circle-o"></i> Sản phẩm</a></li>          
         </ul>
       </li>
       <li class="treeview">
@@ -43,15 +42,32 @@
         </ul>
       </li>
       <li class="treeview">
+        <a href="#">
+          <i class="fa fa-th"></i> <span>Quản lý hình ảnh</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="{{ route('album.index') }}"><i class="fa fa-circle-o"></i> Album</a></li>
+          <li><a href="{{ route('images.index') }}"><i class="fa fa-circle-o"></i> Hình</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="">
+          <i class="fa fa-th"></i> <span>Video</span>         
+        </a>        
+      </li>
+      <li class="treeview">
+        <a href="{{ route('pages.index') }}">
+          <i class="fa fa-th"></i> <span>Trang</span>         
+        </a>        
+      </li>
+      <li class="treeview">
         <a href="{{ route('tag.index') }}">
           <i class="fa fa-th"></i> <span>Tag</span>         
         </a>        
-      </li>  
-       <li class="treeview">
-        <a href="{{ route('crew.index') }}">
-          <i class="fa fa-th"></i> <span>Crew</span>         
-        </a>        
-      </li>   
+      </li>     
       <li class="treeview">
         <a href="{{ route('settings.index') }}">
           <i class="fa fa-th"></i> <span>Cài đặt</span>         
