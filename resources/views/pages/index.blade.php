@@ -28,7 +28,7 @@
         <div class="box_content">
           <div class="tcat">
             <div class="icon"><a>{!! $row->name !!}</a></div>
-            <div class="xemthemprol"><a href="san-pham/da-cam-thach-l24.html">Xem thêm >></a></div>
+            <div class="xemthemprol"><a href="{!! route('loaisp', [$row->slug, $row->id]) !!}">Xem thêm >></a></div>
             <div class="clear"></div>
           </div>
           <div class="content"> 
@@ -39,7 +39,7 @@
               @foreach($sp as $row1)
               <div class="item_product wow fadeInUp col-md-3 col-sm-4 col-xs-6"> 
                 <div class="images"> 
-                  <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html" ><img src="uploads/{!! $row1->image_url !!}" onerror="this.src='images/noimage.gif';" alt="ĐÁ CẨM THẠCH" /></a>
+                  <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html" ><img src="{{ URL::asset('uploads') }}/{!! $row1->image_url !!}" onerror="this.src='images/noimage.gif';" alt="ĐÁ CẨM THẠCH" /></a>
                   <h4 class="pro-tit"> <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html"> {!! $row1->name !!} </a> </h4>
                 </div>
                 <div class="caption">

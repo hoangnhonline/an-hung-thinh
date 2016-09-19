@@ -39,7 +39,7 @@
               @foreach($sp as $row1)
               <div class="item_product wow fadeInUp col-md-3 col-sm-4 col-xs-6"> 
                 <div class="images"> 
-                  <a href="{!! route('chitietsp', [$row1->slug, $row1->id]) !!}" ><img src="uploads/{!! $row1->image_url !!}" onerror="this.src='images/noimage.gif';" alt="ĐÁ CẨM THẠCH" /></a>
+                  <a href="{!! route('chitietsp', [$row1->slug, $row1->id]) !!}" ><img src="{{ URL::asset('uploads') }}/{!! $row1->image_url !!}" onerror="this.src='images/noimage.gif';" alt="ĐÁ CẨM THẠCH" /></a>
                   <h4 class="pro-tit"> <a href="{!! route('chitietsp', [$row1->slug, $row1->id]) !!}"> {!! $row1->name !!} </a> </h4>
                 </div>
                 <div class="caption">
