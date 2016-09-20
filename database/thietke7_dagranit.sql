@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.2
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 15, 2016 at 07:52 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Host: localhost
+-- Generation Time: Sep 20, 2016 at 06:33 PM
+-- Server version: 5.6.30-1+deb.sury.org~wily+2
+-- PHP Version: 7.0.9-1+deb.sury.org~wily+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,8 +17,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `anhungthinh`
+-- Database: `thietke7_dagranit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `album`
+--
+
+CREATE TABLE `album` (
+  `name` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `album`
+--
+
+INSERT INTO `album` (`name`, `id`, `slug`, `created_at`, `updated_at`) VALUES
+('Slide lớn trang chủ', 1, 'slide-lon-trang-chu', '2016-09-20 08:31:52', '2016-09-20 08:31:52'),
+('Album ảnh kế khung \'Giới thiệu\'', 2, 'album-anh-ke-khung-gioi-thieu', '2016-09-20 08:32:12', '2016-09-20 08:32:12'),
+('Album slide cột bên trái', 3, 'album-slide-cot-ben-trai', '2016-09-20 08:32:28', '2016-09-20 08:32:28');
 
 -- --------------------------------------------------------
 
@@ -117,10 +140,41 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `alias`, `description`, `display_order`, `slug`, `status`, `meta_title`, `meta_description`, `meta_keywords`, `custom_text`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(2, 'Iphone', 'Iphone', '', 1, 'iphone', 1, '', '', '', '', 1, 1, '2016-09-15 02:40:04', '2016-09-15 02:40:04'),
-(3, 'Samsung', 'Samsung', '', 1, 'samsung', 1, '', '', '', '', 1, 1, '2016-09-15 02:40:21', '2016-09-15 02:40:21'),
-(4, 'Sony', 'Sony', '', 1, 'sony', 1, '', '', '', '', 1, 1, '2016-09-15 02:40:40', '2016-09-15 02:40:40'),
-(5, 'Oppo', 'Oppo', '', 1, 'oppo', 1, '', '', '', '', 1, 1, '2016-09-15 02:41:16', '2016-09-15 02:41:16');
+(1, 'ĐÁ GRANITE', 'DA GRANITE', '', 1, 'da-granite', 1, 'ĐÁ GRANITE', 'ĐÁ GRANITE', 'ĐÁ GRANITE', 'ĐÁ GRANITE', 1, 1, '2016-09-19 01:45:16', '2016-09-19 01:45:16'),
+(2, 'ĐÁ MARBLE', 'DA MARBLE', '', 1, 'da-marble', 1, 'ĐÁ MARBLE', 'ĐÁ MARBLE', 'ĐÁ MARBLE', 'ĐÁ MARBLE', 1, 1, '2016-09-19 01:45:33', '2016-09-19 01:45:33'),
+(3, 'ĐÁ NHÂN TẠO', 'DA NHAN TAO', '', 1, 'da-nhan-tao', 1, 'ĐÁ NHÂN TẠO', 'ĐÁ NHÂN TẠO', 'ĐÁ NHÂN TẠO', 'ĐÁ NHÂN TẠO', 1, 1, '2016-09-19 01:45:46', '2016-09-19 01:45:46'),
+(4, 'ĐÁ CẨM THẠCH', 'DA CAM THACH', '', 1, 'da-cam-thach', 1, 'ĐÁ CẨM THẠCH', 'ĐÁ CẨM THẠCH', 'ĐÁ CẨM THẠCH', 'ĐÁ CẨM THẠCH', 1, 1, '2016-09-19 01:45:57', '2016-09-19 01:45:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `image_url` varchar(255) NOT NULL,
+  `album_id` tinyint(4) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `image_url`, `album_id`, `created_at`, `updated_at`) VALUES
+(1, '2016/09/20/40700801-1474360367.png', 1, '2016-09-20 08:32:48', '2016-09-20 08:32:48'),
+(2, '2016/09/20/89765347-1474360780.png', 1, '2016-09-20 08:32:54', '2016-09-20 08:39:41'),
+(3, '2016/09/20/82514814-1474360380.png', 1, '2016-09-20 08:33:00', '2016-09-20 08:33:00'),
+(4, '2016/09/20/08957657-1474360395.jpg', 2, '2016-09-20 08:33:15', '2016-09-20 08:33:15'),
+(5, '2016/09/20/20502088-1474360401.jpg', 2, '2016-09-20 08:33:22', '2016-09-20 08:33:22'),
+(6, '2016/09/20/43182773-1474360408.jpg', 2, '2016-09-20 08:33:29', '2016-09-20 08:33:29'),
+(7, '2016/09/20/51989522-1474360414.jpg', 2, '2016-09-20 08:33:35', '2016-09-20 08:33:35'),
+(8, '2016/09/20/20739105-1474360420.jpg', 2, '2016-09-20 08:33:41', '2016-09-20 08:33:41'),
+(9, '2016/09/20/10951532-1474360512.jpg', 3, '2016-09-20 08:35:13', '2016-09-20 08:35:13'),
+(10, '2016/09/20/58220510-1474360519.jpg', 3, '2016-09-20 08:35:20', '2016-09-20 08:35:20'),
+(11, '2016/09/20/58220510-1474360638.jpg', 3, '2016-09-20 08:37:18', '2016-09-20 08:37:18');
 
 -- --------------------------------------------------------
 
@@ -152,7 +206,7 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `title`, `alias`, `description`, `content`, `image_url`, `slug`, `status`, `meta_title`, `meta_description`, `meta_keywords`, `custom_text`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(3, 'Ben', 'Ben', 'asdasd', '<p>asdasd</p>\r\n', '2016/09/01/penguins-1472729694.jpg', 'ben', 1, '', '', '', '', 0, 0, '2016-09-01 11:34:58', '2016-09-01 11:34:58');
+(1, 'Giới thiệu', 'Gioi thieu', 'Đá Marble và Granite là loại đá được ứng dụng rộng rãi trong ốp lát ngành xây dựng. Với Ưu điểm của 2 loại vật liệu này là tạo phong cách lịch lãm, thoáng mát, cách nhiệt mang đến cho chủ nhân căn nhà một sự hòa hợp tuyệt vời giữa phong cách cổ điển và hiện đại. Ngoài ra, đá marble – Granite còn có tính chịu lực cao và độ bền tốt. Độ dày của đá cho phép nền nhà chịu được sự va đập mạnh.', '<p>Đ&aacute; Marble v&agrave; Granite l&agrave; loại đ&aacute; được ứng dụng rộng r&atilde;i trong ốp l&aacute;t ng&agrave;nh x&acirc;y dựng. Với Ưu điểm của 2 loại vật liệu n&agrave;y l&agrave; tạo phong c&aacute;ch lịch l&atilde;m, tho&aacute;ng m&aacute;t, c&aacute;ch nhiệt mang đến cho chủ nh&acirc;n căn nh&agrave; một sự h&ograve;a hợp tuyệt vời giữa phong c&aacute;ch cổ điển v&agrave; hiện đại. Ngo&agrave;i ra, đ&aacute; marble &ndash; Granite c&ograve;n c&oacute; t&iacute;nh chịu lực cao v&agrave; độ bền tốt. Độ d&agrave;y của đ&aacute; cho ph&eacute;p nền nh&agrave; chịu được sự va đập mạnh.</p>\r\n', '2016/09/20/30062159-1474369497.png', 'gioi-thieu', 1, 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 'Giới thiệu', 0, 0, '2016-09-20 11:04:32', '2016-09-20 11:04:58');
 
 -- --------------------------------------------------------
 
@@ -187,14 +241,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `cate_id`, `name`, `alias`, `description`, `content`, `image_url`, `price`, `is_hot`, `slug`, `status`, `meta_title`, `meta_description`, `meta_keywords`, `custom_text`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(6, 2, 'Iphone 7', 'Iphone 7', 'asdasdadadadasdasdasdasd', '', '2016/09/15/penguins-1473907363.jpg', '40000000', 0, 'iphone7', 1, '', '', '', '', 0, 0, '2016-09-15 02:43:17', '2016-09-15 02:43:17'),
-(7, 2, 'Iphone 6', 'Iphone 6', 'asdasdasdasdasdsadsadsa', '', '2016/09/15/penguins-1473907455.jpg', '20000000', 0, 'iphone6', 1, '', '', '', '', 0, 0, '2016-09-15 02:44:20', '2016-09-15 02:44:20'),
-(8, 3, 'Samsung Galaxy 7', 'Samsung Galaxy 7', 'asdasdasdasdasdasdasd', '', '2016/09/15/chrysanthemum-1473907514.jpg', '40000000', 0, 'samsung-galaxy-7', 1, '', '', '', '', 0, 0, '2016-09-15 02:45:19', '2016-09-15 02:45:19'),
-(9, 3, 'Samsung Note', 'Samsung Note', 'asdasdadasdasdasdasd', '', '2016/09/15/chrysanthemum-1473907548.jpg', '20000000', 0, 'samsung-note', 1, '', '', '', '', 0, 0, '2016-09-15 02:45:53', '2016-09-15 02:45:53'),
-(10, 4, 'Sony Experia', 'Sony Experia', 'asdasdasdasdasdasd', '', '2016/09/15/tulips-1473907633.jpg', '40000000', 0, 'sony-experia', 1, '', '', '', '', 0, 0, '2016-09-15 02:47:18', '2016-09-15 02:47:18'),
-(11, 4, 'Sony Experia 7', 'Sony Experia 7', 'asdadasdasdasdasd', '', '2016/09/15/tulips-1473907662.jpg', '20000000', 0, 'sony-experia-7', 1, '', '', '', '', 0, 0, '2016-09-15 02:47:46', '2016-09-15 02:47:46'),
-(12, 5, 'Oppo Neo 7', 'Oppo Neo 7', 'asdasdasdasdasdasdasd', '', '2016/09/15/jellyfish-1473907691.jpg', '40000000', 0, 'oppo-neo-7', 1, '', '', '', '', 0, 0, '2016-09-15 02:48:16', '2016-09-15 02:48:16'),
-(13, 5, 'Oppo Neo 8', 'Oppo Neo 8', 'sdasdasdasdasdasdasdasd', '', '2016/09/15/jellyfish-1473907742.jpg', '20000000', 0, 'oppo-neo-8', 1, '', '', '', '', 0, 0, '2016-09-15 02:49:06', '2016-09-15 02:49:06');
+(1, 1, 'Đá granite 1', 'Da granite 1', '', '', '2016/09/19/764445508392-1474249978.jpg', '580000', 0, 'da-granite-1', 1, 'Đá granite 1', 'Đá granite 1', 'Đá granite 1', 'Đá granite 1', 0, 0, '2016-09-19 01:53:20', '2016-09-19 01:53:20'),
+(2, 1, 'Đá granite 2', 'Da granite 2', '', '', '2016/09/20/selection-045-1474362908.png', '320000', 0, 'da-granite-2', 1, '', '', '', '', 0, 0, '2016-09-20 09:11:25', '2016-09-20 09:15:14');
 
 -- --------------------------------------------------------
 
@@ -217,23 +265,28 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `name`, `value`, `updated_user`, `created_at`, `updated_at`) VALUES
 (1, 'base_url', 'http://nghien.biz', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
-(2, 'site_title', 'Xem phim hay,  Bom Tấn Online chuẩn HD ', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(3, 'site_description', 'Trang xem phim hay online với chuẩn HD, cập nhật đầy đủ các thể loại phim, tốc độ load cực nhanh và xem phim hoàn toàn miễn phí.', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(4, 'site_keywords', 'xem phim, phim hay, phim online, phim hd, phim miễn phí, xem phim hay, xem phim online, xem phim hd, xem phim miễn phí', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:23'),
+(2, 'site_title', 'Đá hoa cương Hưng Thịnh', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
+(3, 'site_description', 'Đá hoa cương Hưng Thịnh', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
+(4, 'site_keywords', 'Đá hoa cương Hưng Thịnh', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
 (5, 'admin_email', 'nghien.biz@gmail.com', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
 (22, 'mail_server', 'mail.example.com', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
 (23, 'mail_login_name', 'login@example.com', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
 (24, 'mail_password', 'password', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
-(105, 'site_name', 'Xem phim hay,  Bom Tấn Online chuẩn HD ', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(113, 'google_analystic', 'UA-78246182-1', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(114, 'facebook_appid', '1704278759791793', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(115, 'google_fanpage', '', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(116, 'facebook_fanpage', 'https://www.facebook.com/nhakhoavietkhoa', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(117, 'twitter_fanpage', '', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:22'),
-(130, 'logo', '2016/09/01/penguins-1472700629.jpg', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:23'),
-(131, 'favicon', '2016/09/01/koala-1472700632.jpg', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:23'),
-(141, 'banner', '2016/09/01/lighthouse-1472700634.jpg', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:23'),
-(142, 'custom_text', '', 1, '2016-07-27 14:37:52', '2016-09-01 03:31:23');
+(105, 'site_name', 'Đá hoa cương Hưng Thịnh', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:26'),
+(113, 'google_analystic', 'UA-78246182-1', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:26'),
+(114, 'facebook_appid', '1704278759791793', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:26'),
+(115, 'google_fanpage', '', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:26'),
+(116, 'facebook_fanpage', 'https://www.facebook.com/nhakhoavietkhoa', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:26'),
+(117, 'twitter_fanpage', '', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:26'),
+(130, 'logo', '2016/09/01/penguins-1472700629.jpg', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
+(131, 'favicon', '2016/09/01/koala-1472700632.jpg', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
+(141, 'banner', '2016/09/01/lighthouse-1472700634.jpg', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
+(142, 'custom_text', '', 1, '2016-07-27 14:37:52', '2016-09-20 11:03:27'),
+(143, 'ten_skype_1', 'Mr Tuấn', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
+(144, 'ten_skype_2', 'Mrs Trang', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
+(145, 'nick_skype_1', 'nick1', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
+(146, 'nick_skype_2', 'nick2', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52'),
+(147, 'hot_line', '093.857.8439', 1, '2016-07-27 14:37:52', '2016-07-27 14:37:52');
 
 -- --------------------------------------------------------
 
@@ -255,50 +308,6 @@ CREATE TABLE `tag` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
---
--- Dumping data for table `tag`
---
-
-INSERT INTO `tag` (`id`, `meta_id`, `slug`, `type`, `name`, `alias`, `description`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(1, 2, 'action-movies', '1', 'action movies', NULL, '', 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(5, 19, 'the-flash', '1', 'The Flash', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(6, 20, 'the-flash-season-1', '1', 'The Flash Season 1', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(7, 21, 'tv-series', '1', 'TV Series', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(8, 24, 'marvel', '1', 'Marvel', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(9, 25, 'age-of-ultron', '1', 'Age Of Ultron', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(10, 26, 'avengers', '1', 'Avengers', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(11, 27, 'avengers-2015', '1', 'Avengers 2015', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(12, 28, 'ciname-movies', '1', 'ciname movies', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(13, 29, 'thriller', '1', 'thriller', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(14, 30, 'fast-and-furious-7', '1', 'Fast and Furious 7', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(15, 31, 'fast-7', '1', 'Fast 7', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(16, 34, 'kyoto-kenshin', '1', 'Kyoto Kenshin', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(17, 35, 'flying-swords-of-dragon-gate', '1', 'Flying Swords Of Dragon Gate', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(18, 42, 'cinema-movie', '1', 'cinema movie', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(19, 52, 'one-piece', '1', 'One Piece', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(20, 57, 'fantasy', '1', 'fantasy', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(21, 58, 'drama', '1', 'drama', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(22, 61, 'survivor-2015', '1', 'Survivor 2015', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(23, 63, 'jurassic', '1', 'Jurassic', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(24, 64, 'jurassic-park-3', '1', 'Jurassic Park 3', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(25, 65, 'jurassic-2001', '1', 'Jurassic 2001', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(26, 67, 'sifu-vs-vampire', '1', 'sifu vs vampire', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(27, 68, 'phim-ma', '1', 'phim ma', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(28, 69, 'ong-toi-la-cuong-thi', '1', 'ông tôi là cương thi', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(29, 70, 'cuong-thi', '1', 'cương thi', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(35, 80, 'the-revenant-tron-bo', '1', 'The Revenant trọn bộ', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(37, 89, 'lam-tam-nhu', '2', 'lâm tâm như', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(38, 90, 'hoac-kien-hoa', '2', 'hoắc kiến hoa', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(41, 94, 'apocalypse', '1', 'Apocalypse', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(42, 95, 'days-of-future-past', '1', 'Days of Future Past', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(43, 96, 'ky-an-nha-thanh', '1', 'kỳ án nhà thanh', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(44, 97, 'ky-an-nha-thanh-tap-1', '1', 'ky an nha thanh tap 1', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(45, 98, 'ky-an-nha-thanh-2', '1', 'ky an nha thanh 2', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(46, 100, 'naruto', '1', 'naruto', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(47, 101, 'naruto-shippuuden', '1', 'Naruto Shippuuden', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(48, 102, 'uzumaki-naruto', '1', 'Uzumaki Naruto', NULL, NULL, 1, 1, '2016-01-01 00:00:00', '2016-01-01 00:00:00'),
-(49, NULL, 'test', '1', 'test', 'test', '', 0, 0, '2016-08-07 14:03:15', '2016-08-07 14:03:15');
-
 -- --------------------------------------------------------
 
 --
@@ -310,59 +319,6 @@ CREATE TABLE `tag_objects` (
   `tag_id` int(20) NOT NULL,
   `type` tinyint(4) NOT NULL COMMENT '1 : film, 1 : tin tuc'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tag_objects`
---
-
-INSERT INTO `tag_objects` (`object_id`, `tag_id`, `type`) VALUES
-(1, 5, 1),
-(1, 6, 1),
-(1, 7, 1),
-(2, 8, 1),
-(2, 9, 1),
-(2, 10, 1),
-(2, 11, 1),
-(3, 12, 1),
-(3, 13, 1),
-(4, 14, 1),
-(4, 15, 1),
-(5, 37, 0),
-(5, 38, 0),
-(6, 16, 1),
-(6, 37, 0),
-(6, 38, 0),
-(7, 17, 1),
-(11, 18, 1),
-(17, 26, 1),
-(17, 27, 1),
-(17, 28, 1),
-(17, 29, 1),
-(19, 19, 1),
-(22, 43, 1),
-(22, 44, 1),
-(22, 45, 1),
-(23, 6, 1),
-(23, 7, 1),
-(23, 8, 1),
-(25, 1, 1),
-(25, 22, 1),
-(26, 23, 1),
-(26, 24, 1),
-(26, 25, 1),
-(27, 5, 1),
-(27, 7, 1),
-(30, 35, 1),
-(32, 39, 1),
-(32, 40, 1),
-(32, 41, 1),
-(32, 42, 1),
-(33, 46, 1),
-(33, 47, 1),
-(33, 48, 1),
-(37, 6, 1),
-(39, 7, 1),
-(40, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -390,12 +346,40 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `role`, `status`, `changed_password`, `remember_token`, `created_user`, `updated_user`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'admin@anhungthinh.com', '$2y$10$/vF4N2AKvZub7jnhWpTaWeBoejGkbad5DOx9IRfBTvKqWkzgPuTX6', 3, 1, 0, '', 1, 1, '2016-08-27 05:26:18', '2016-08-27 10:21:27'),
+(1, 'Super Admin', 'admin@dagranit.vn', '$2y$10$BQWISt5.Vn.9kyR2/0c/COCGACNL6zbCzhpTWZwFP.k/RXRxy2IKS', 3, 1, 0, 'dMhrijH9Fl29Nw5yFRHtDZA0RnDdlScUfRGTARE7dq2gJCH157hCOwrsekMV', 1, 1, '2016-08-27 05:26:18', '2016-09-20 11:07:19'),
 (6, 'Hoang Nguyen', 'hoangnhpublic@gmail.com', '$2y$10$8sMegaFE.07wPr6S74IhUe1a61CdrWjOOLEmFXvx2ATe/gVekhkEq', 1, 2, 0, '', 1, 1, '2016-08-27 05:26:18', '2016-08-27 13:54:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `video`
+--
+
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `youtube_url` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `video`
+--
+
+INSERT INTO `video` (`id`, `name`, `youtube_url`, `created_at`, `updated_at`) VALUES
+(1, 'Cắt đá hoa cương', 'https://www.youtube.com/watch?v=LCVs_ov7yFA', '2016-09-20 09:19:31', '2016-09-20 09:19:31'),
+(2, 'Đá hoa cương ốp cầu thang', 'https://www.youtube.com/watch?v=IT4y2Gni8bQ', '2016-09-20 09:19:52', '2016-09-20 09:19:52');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `album`
+--
+ALTER TABLE `album`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `articles`
@@ -413,6 +397,12 @@ ALTER TABLE `articles_cate`
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -453,9 +443,20 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `album`
+--
+ALTER TABLE `album`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `articles`
 --
@@ -470,32 +471,42 @@ ALTER TABLE `articles_cate`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(111) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 --
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `video`
+--
+ALTER TABLE `video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
