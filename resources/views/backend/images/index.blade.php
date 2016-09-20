@@ -20,16 +20,16 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('images.create') }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('images.create', ['album_id' => $album_id]) }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('images.index') }}">            
+          <form class="form-inline" role="form" method="GET" action="{{ route('images.index') }}" id="searchForm">
             <div class="form-group">
               <label for="email">Album </label>
-              <select class="form-control select2" name="cate_id" id="cate_id">
+              <select class="form-control select2" name="album_id" id="album_id">
                 <option value="">--Tất cả--</option>
                 @if( $cateArr->count() > 0)
                   @foreach( $cateArr as $value )
@@ -37,10 +37,6 @@
                   @endforeach
                 @endif
               </select>
-            </div>            
-            <div class="form-group">
-              <label for="email">Từ khóa :</label>
-              <input type="text" class="form-control" name="title" value="{{ $title }}">
             </div>
             <button type="submit" class="btn btn-default">Lọc</button>
           </form>         
@@ -134,6 +130,9 @@ function callDelete(name, url){
   return flag;
 }
 $(document).ready(function(){
+  $('#album_id').change(function(){
+    $('#searchForm').submit();
+  });
   $('img.lazy').lazyload();
   $('#parent_id').change(function(){
     $.ajax({

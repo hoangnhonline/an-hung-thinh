@@ -1,5 +1,5 @@
 <?php 
-$url = 'http://anhungthinh.dev';
+$url = 'http://dagranit.vn';
 return [    
     'paging' => 100, // number rows for paging
     'uploads' => [

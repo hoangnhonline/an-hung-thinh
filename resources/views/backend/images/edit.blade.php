@@ -66,10 +66,7 @@
                 <div style="clear:both"></div>                
                 <!-- textarea -->
                 
-                <div class="form-group">
-                  <label>Chi tiết</label>
-                  <textarea class="form-control" rows="4" name="content" id="content">{{ $detail->content }}</textarea>
-                </div>
+               
                   
             </div>          
             <input type="hidden" name="image_url" id="image_url" value="{{ $detail->image_url }}"/>          
@@ -95,19 +92,11 @@
 
 @stop
 @section('javascript_page')
-<script src="{{ URL::asset('be/dist/js/ckeditor/ckeditor.js') }}"></script>
+
 <script type="text/javascript">
     $(document).ready(function(){
       $(".select2").select2();
-      var editor = CKEDITOR.replace( 'content',{
-          language : 'vi',
-          filebrowserBrowseUrl: '../dist/js/kcfinder/browse.php?type=files',
-          filebrowserImageBrowseUrl: '../dist/js/kcfinder/browse.php?type=images',
-          filebrowserFlashBrowseUrl: '../dist/js/kcfinder/browse.php?type=flash',
-          filebrowserUploadUrl: '../dist/js/kcfinder/upload.php?type=files',
-          filebrowserImageUploadUrl: '../dist/js/kcfinder/upload.php?type=images',
-          filebrowserFlashUploadUrl: '../dist/js/kcfinder/upload.php?type=flash'
-      });
+      
       $('#btnUploadImage').click(function(){        
         $('#file-image').click();
       });      

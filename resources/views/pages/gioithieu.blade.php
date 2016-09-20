@@ -10,12 +10,9 @@
         <div class="about-content">
           <h3 class="page-title">Giới thiệu</h3>
           <div class="about-content-main">
-            A
-            <br>B<br>C
-            <br>D
-            <br>E <br>           
-            <br>A 
+            <?php echo $about->content; ?>
           </div><!-- about-detail -->
+          <div class="clearfix" style="margin-bottom:20px"></div>
         </div>
         
       </div><!-- end /.container_mid -->

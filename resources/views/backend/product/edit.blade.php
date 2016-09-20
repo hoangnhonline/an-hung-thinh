@@ -53,7 +53,7 @@
                 
                 <div class="form-group" >
                   
-                  <label>Tiêu đề <span class="red-star">*</span></label>
+                  <label>Tên sản phẩm<span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ $detail->name }}">
                 </div>
                 <span class=""></span>
@@ -62,7 +62,7 @@
                   <input type="text" class="form-control" name="slug" id="slug" value="{{ $detail->slug }}">
                 </div>
                 <div class="form-group">                  
-                  <label>Price <span class="red-star">*</span></label>                  
+                  <label>Giá <span class="red-star">*</span></label>                  
                   <input type="text" class="form-control" name="price" id="price" value="{{ $detail->price }}">
                 </div>
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
@@ -96,17 +96,7 @@
                     <option value="0" {{ $detail->status == 0 ? "selected" : "" }}>Ẩn</option>
                     <option value="1" {{ $detail->status == 1 || $detail->status == NULL ? "selected" : "" }}>Hiện</option>                  
                   </select>
-                </div>
-                <div class="form-group">
-                  <label>Tags</label>
-                  <select class="form-control select2" name="tags[]" id="tags" multiple="multiple">                  
-                    @if( $tagArr->count() > 0)
-                      @foreach( $tagArr as $value )
-                      <option value="{{ $value->id }}" >{{ $value->name }}</option>
-                      @endforeach
-                    @endif
-                  </select>
-                </div>
+                </div>               
                 <div class="form-group">
                   <label>Chi tiết</label>
                   <textarea class="form-control" rows="4" name="content" id="content">{{ $detail->content }}</textarea>

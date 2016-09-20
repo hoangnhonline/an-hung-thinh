@@ -18,10 +18,9 @@
         </ul>
       </div>
       <div class="footer_mid">
-        <h3 class="footer-box-tit">Thống kê</h3>
+        <h3 class="footer-box-tit">Fanpage facebook</h3>
         <div class="khungtktc">
-          <p class="online">Đang online: <span>1 </p>
-          <p class="visit">Tổng truy cập: <span>8016</span> </p>
+          
         </div>
       </div>
     </div>
@@ -31,9 +30,9 @@
     <table class="table-style" cellpadding="0" cellspacing="0">
       <tbody>
         <tr>
-          <td><a class="link_title blink_me ui-link" href="tel:0933 080 889"><img src="images/goidien.png"> Gọi điện</a></td>
-          <td height="50"><a class="link_title ui-link" target="_blank" href="sms:0933 080 889"><img src="images/tuvan.png"> SMS</a></td>
-          <td><a class="link_title ui-link" href="lien-he.html"><img src="images/chiduong.png">Chỉ Đường</a></td>
+          <td><a class="link_title blink_me ui-link" href="tel:{{ $settingArr['hot_line'] }}"><img src="{{ URL::asset('images/goidien.png') }}"> Gọi điện</a></td>
+          <td height="50"><a class="link_title ui-link" target="_blank" href="sms:{{ $settingArr['hot_line'] }}"><img src="{{ URL::asset('images/tuvan.png') }}"> SMS</a></td>
+          <td><a class="link_title ui-link" href="lien-he.html"><img src="{{ URL::asset('images/chiduong.png') }}">Chỉ Đường</a></td>
         </tr>
       </tbody>
     </table>

@@ -62,12 +62,7 @@
         <a href="{{ route('pages.index') }}">
           <i class="fa fa-th"></i> <span>Trang</span>         
         </a>        
-      </li>
-      <li class="treeview">
-        <a href="{{ route('tag.index') }}">
-          <i class="fa fa-th"></i> <span>Tag</span>         
-        </a>        
-      </li>     
+      </li>       
       <li class="treeview">
         <a href="{{ route('settings.index') }}">
           <i class="fa fa-th"></i> <span>Cài đặt</span>         

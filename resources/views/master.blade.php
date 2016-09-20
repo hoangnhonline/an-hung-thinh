@@ -29,7 +29,6 @@
 <meta property="og:title" content="ĐÁ HOA CƯƠNG .CO" />
 <meta property="og:image" content="upload/hinhanh/11532792.png" />
 <meta property="og:description" content="dahoacuong.co" />
-<!-------------------------------------->
 <link href="{{ URL::asset('upload/hinhanh/11532792.png') }}" rel="shortcut icon" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/bootstrap-3.2.0/css/bootstrap.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/font.css') }}"/>
@@ -67,11 +66,11 @@
 
 <body >
 <div id="bg_page">
-  <!-- HEADER -->@include('blocks.header')
+  @include('blocks.header')
   
-  <!-- CONTENT -->@yield('content')
+  @yield('content')
   
-  <!-- FOOTER -->@include('blocks.footer')
+  @include('blocks.footer')
 
 <!--Back to Top--> 
 <script type="text/javascript">
@@ -95,7 +94,7 @@
     });
 </script> 
 <!--End back to top-->
-<div class="scroll-top"> <img src="{{ URL::asset('images/icon-scroll-top.png') }}" alt="lên đầu trang" /> </div>
+<div class="scroll-top"> <img src="{{ URL::asset('images/icon-scroll-top.png') }}" alt="Lên đầu trang" /> </div>
 <!--scroll-top-->
 
 </body>

@@ -11,19 +11,19 @@
             <script type='text/javascript' src="{{ URL::asset('assets/menuleft_accordion/js/jquery.hoverIntent.minified.js') }}"></script> 
             <script type='text/javascript' src="{{ URL::asset('assets/menuleft_accordion/js/jquery.dcjqaccordion.2.7.min.js') }}"></script> 
             <script type="text/javascript">
-    $(document).ready(function($){
-      $('#accordion-6').dcAccordion({
-        eventType: 'hover',
-        autoClose: true,
-        saveState: true,
-        disableLink: false,
-        showCount: false,
-        menuClose: true,
-        speed: 150
+              $(document).ready(function($){
+                $('#accordion-6').dcAccordion({
+                  eventType: 'hover',
+                  autoClose: true,
+                  saveState: true,
+                  disableLink: false,
+                  showCount: false,
+                  menuClose: true,
+                  speed: 150
 
-      });
-    });
-</script>
+                });
+              });
+          </script>
             <div class="blue boxmenuleft">
               <ul class="accordion"  id="accordion-6">
                 <?php 
@@ -47,22 +47,20 @@
             <div class="boxhinhhotro" >
               <div class="hinhhotro"></div>
             </div>
-            <div class="titlehotroonline">Hotline: <span>093.857.8439</span></div>
+            <div class="titlehotroonline">Hotline: <span>{{ $settingArr['hot_line'] }}</span></div>
             <div class="clear"></div>
             <div class="box-hotro" >
               <div class="box-icon clearfix">
-                <div class="namehotro"> <span>Mr. Tuấn</span> </div>
-                <div class="ico-yahoo">Yahoo: <a href="ymsgr:sendim?"><img src="{{ URL::asset('images/ico-yahoo.png') }}"  alt="Mr. Tuấn"/></a></div>
-                <div class="ico-sky">Skyper: <a href="Skype:?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="Mr. Tuấn"/> </a></div>
+                <div class="namehotro"> <span>{{ $settingArr['ten_skype_1'] }}</span> <a href="Skype:{{ $settingArr['nick_skype_1'] }}?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="{{ $settingArr['ten_skype_1'] }}"/> </a></div>               
+               
                 <div class="clear"></div>
               </div>
             </div>
             <div class="clear"></div>
-            <div class="box-hotro" style="border-bottom:none;">
+            <div class="box-hotro" style="border-bottom:none;margin-bottom:10px">
               <div class="box-icon clearfix">
-                <div class="namehotro"> <span>Ms. Trang</span> </div>
-                <div class="ico-yahoo">Yahoo: <a href="ymsgr:sendim?huyentrang1111.hcm@yahoo.com"><img src="{{ URL::asset('images/ico-yahoo.png') }}"  alt="Ms. Trang"/></a></div>
-                <div class="ico-sky">Skyper: <a href="Skype:huyentrang1111?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="Ms. Trang"/> </a></div>
+                <div class="namehotro"> <span>{{ $settingArr['ten_skype_2'] }}</span> <a href="Skype:{{ $settingArr['nick_skype_2'] }}?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="{{ $settingArr['ten_skype_2'] }}"/></a></div>             
+               
                 <div class="clear"></div>
               </div>
             </div>
@@ -76,17 +74,23 @@
             <h2>Videos clip</h2>
           </div>
           <div class="content" style="padding:5px 5px" >
-
+          <?php
+          $videoArr = DB::table('video')->get();
+          $firstVideo = DB::table('video')->first();
+          $tmp = explode('?v=', $firstVideo->youtube_url);          
+           ?>
             <div class="videonb">
               <div class="videoyoutube">
-                <iframe width="100%" height="220px" src="http://www.youtube.com/embed/Y3bRsgdpjgM" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="220px" src="http://www.youtube.com/embed/{{ $tmp[1] }}" frameborder="0" allowfullscreen id="loadVideoYoutube"></iframe>
               </div>
               <div class="clear"></div>
               <select id="listvideos">
-                <option value="#">- - - - Choose Video - - - -</option>
-                <option value="8">Đá Granite và Marble</option>
-                <option value="33">Cắt đá hoa cương</option>
-                <option value="34">đá hoa cương ốp cầu thang</option>
+                @foreach($videoArr as $video)
+                <?php 
+                  $tmp = explode('?v=', $video->youtube_url);
+                ?>
+                <option value="{{ $tmp[1] }}">{{ $video->name }}</option>
+                @endforeach
               </select>
             </div>
           </div>
@@ -101,21 +105,17 @@
             <div class="vert_spnb_l">
               <div class="scroll_spnb_l">
                 <div class="boxpronew">
-                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/index.html"><img src="upload/hinhanh/index.html" alt="dahoacuong.co"></a> </div>
-                  <!-- <a href="san-pham/dahoacuongco-41" title="dahoacuong.co">dahoacuong.co</a>--> 
-                </div>
-                <div class="boxpronew">
-                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/index.html"><img src="upload/hinhanh/index.html" alt="dahoacuong.co"></a> </div>
-                  <!-- <a href="san-pham/dahoacuongco-40" title="dahoacuong.co">dahoacuong.co</a>--> 
-                </div>
-                <div class="boxpronew">
-                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/58220510.jpg"><img src="{{ URL::asset('upload/hinhanh/58220510.jpg') }}" alt="dahoacuong.co"></a> </div>
-                  <!-- <a href="san-pham/dahoacuongco-39" title="dahoacuong.co">dahoacuong.co</a>--> 
-                </div>
-                <div class="boxpronew">
-                  <div class="picpronew"> <a class="fancybox" rel="group" href="upload/hinhanh/10951532.jpg"><img src="{{ URL::asset('upload/hinhanh/10951532.jpg') }}" alt="dahoacuong.co"></a> </div>
-                  <!-- <a href="san-pham/dahoacuongco-38" title="dahoacuong.co">dahoacuong.co</a>--> 
-                </div>
+                  <?php 
+                  $tmpArr = DB::table('images')->where('album_id', 3)->get();                  
+                  ?>
+                  @foreach( $tmpArr as $img )
+                  <div class="picpronew"> 
+                    <a class="fancybox" rel="group" href="{{ Helper::showImage( $img->image_url ) }}">
+                       <img src="{{ Helper::showImage($img->image_url) }}" alt="hinh anh">
+                    </a> 
+                  </div>                  
+                  @endforeach
+                </div>                
               </div>
             </div>
             <script type="text/javascript">
@@ -134,6 +134,10 @@
             </script> 
                         <script type="text/javascript">
               $(document).ready(function() {
+                $('#listvideos').change(function(){
+                  var value = $(this).val();
+                  $('#loadVideoYoutube').attr('src', 'http://www.youtube.com/embed/' + value);
+                });
                 $(".fancybox").fancybox();
               });
             </script> 

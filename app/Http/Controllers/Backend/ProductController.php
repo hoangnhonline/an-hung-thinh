@@ -50,10 +50,10 @@ class ProductController extends Controller
     {
 
         $cateArr = Category::all();
-
+        $cate_id = $request->cate_id;
         $tagArr = Tag::where('type', 2)->orderBy('id', 'desc')->get();
 
-        return view('backend.product.create', compact( 'tagArr', 'cateArr' ));
+        return view('backend.product.create', compact( 'tagArr', 'cateArr', 'cate_id'));
     }
 
     /**
@@ -70,13 +70,12 @@ class ProductController extends Controller
             'cate_id' => 'required',            
             'name' => 'required',            
             'slug' => 'required|unique:product,slug',
-            'price' => 'required|numeric',
+            'price' => 'required',
         ],
         [            
             'cate_id.required' => 'Bạn chưa chọn danh mục',            
             'name.required' => 'Bạn chưa nhập tiêu đề',
-            'price.required' => 'Bạn chưa nhập giá tiền',
-            'price.numeric' => 'Bạn chưa nhập đúng giá tiền',
+            'price.required' => 'Bạn chưa nhập giá tiền',            
             'slug.required' => 'Bạn chưa nhập slug',
             'slug.unique' => 'Slug đã được sử dụng.'
         ]);       

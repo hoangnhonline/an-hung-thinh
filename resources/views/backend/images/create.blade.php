@@ -45,7 +45,7 @@
                     <option value="">-- chọn --</option>
                     @if( $cateArr->count() > 0)
                       @foreach( $cateArr as $value )
-                      <option value="{{ $value->id }}" {{ $value->id == old('album_id') ? "selected" : "" }}>{{ $value->name }}</option>
+                      <option value="{{ $value->id }}" {{ $value->id == old('album_id') || (isset($album_id) && $album_id == $value->id) ? "selected" : "" }}>{{ $value->name }}</option>
                       @endforeach
                     @endif
                   </select>

@@ -21,19 +21,14 @@ class ImagesController extends Controller
     */
     public function index(Request $request)
     {
-        $album_id = isset($request->album_id) ? $request->album_id : 0;
-
-        $title = isset($request->name) && $request->name != '' ? $request->name : '';
+        $album_id = isset($request->album_id) ? $request->album_id : 0;      
         
         $query = Images::whereRaw('1');
 
         if( $album_id > 0){
             $query->where('album_id', $album_id);
-        }
-        
-        if( $title != ''){
-            $query->where('name', 'LIKE', '%'.$title.'%');
-        }
+        }        
+      
         $items = $query->orderBy('id', 'desc')->paginate(20);
         
         $cateArr = Album::all();
@@ -51,9 +46,9 @@ class ImagesController extends Controller
 
         $cateArr = Album::all();
 
-        
+        $album_id = $request->album_id;
 
-        return view('backend.images.create', compact('cateArr' ));
+        return view('backend.images.create', compact('cateArr', 'album_id'));
     }
 
     /**

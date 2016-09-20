@@ -283,7 +283,7 @@ function js_submit(){
                 </div>
                 <div class="pad-contact">
                     <input style="width:78%; float:left;" name="captcha" type="text" id="captcha" class="form-control" placeholder="Mã xác nhận">
-                    <img src="sources/capcha.jpg" style="float:left;margin-left:10px;height: 34px; border-radius: 5px;">
+                    <img src="{{ captcha_src() }}" style="float:left;margin-left:10px;height: 34px; border-radius: 5px;">
                 </div>
         <div class="clear"></div>
                 <div class="pad-contact" style="text-align: center;">

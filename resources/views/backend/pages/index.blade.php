@@ -47,7 +47,7 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>              
-              <th>Thumbnail</th>
+              <th width="250px">Thumbnail</th>
               <th>Tiêu đề</th>
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
@@ -59,7 +59,7 @@
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>       
                 <td>
-                  <img class="img-thumbnail lazy" data-original="{{ Helper::showImage($item->image_url)}}" width="145">
+                  <img class="img-thumbnail lazy" data-original="{{ Helper::showImage($item->image_url)}}" width="250">
                 </td>        
                 <td>                  
                   <a href="{{ route( 'pages.edit', [ 'id' => $item->id ]) }}">{{ $item->title }}</a>
@@ -72,8 +72,9 @@
                 </td>
                 <td style="white-space:nowrap">                  
                   <a href="{{ route( 'pages.edit', [ 'id' => $item->id ]) }}" class="btn btn-warning">Chỉnh sửa</a>                 
-                  
+                  @if( $item->id > 1)
                   <a onclick="return callDelete('{{ $item->title }}','{{ route( 'pages.destroy', [ 'id' => $item->id ]) }}');" class="btn btn-danger">Xóa</a>
+                  @endif
                   
                 </td>
               </tr> 

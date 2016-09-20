@@ -20,13 +20,13 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('product.create') }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('product.create', ['cate_id' => $cate_id]) }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('product.index') }}">            
+          <form class="form-inline" role="form" method="GET" action="{{ route('product.index') }}" id="searchForm">            
             <div class="form-group">
               <label for="email">Danh mục </label>
               <select class="form-control select2" name="cate_id" id="cate_id">
@@ -60,8 +60,8 @@
           <table class="table table-bordered" id="table-list-data">
             <tr>
               <th style="width: 1%">#</th>              
-              <th>Thumbnail</th>
-              <th>Tiêu đề</th>
+              <th width="250px">Thumbnail</th>
+              <th>Thông tin sản phẩm</th>
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
             <tbody>
@@ -131,19 +131,8 @@ function callDelete(name, url){
 }
 $(document).ready(function(){
   $('img.lazy').lazyload();
-  $('#parent_id').change(function(){
-    $.ajax({
-        url: $('#route_get_cate_by_parent').val(),
-        type: "POST",
-        async: false,
-        data: {          
-            parent_id : $(this).val(),
-            type : 'list'
-        },
-        success: function(data){
-            $('#cate_id').html(data).select2('refresh');                      
-        }
-    });
+  $('#cate_id').change(function(){
+      $('#searchForm').submit();
   });
   $('.select2').select2();
 

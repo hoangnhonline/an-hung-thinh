@@ -75,18 +75,7 @@
                     <option value="1" {{ old('status') == 1 || old('status') == NULL ? "selected" : "" }}>Hiện</option>                  
                   </select>
                 </div>
-                <div class="form-group">
-                  <label>Tags</label>
-                  <select class="form-control select2" name="tags[]" id="tags" multiple="multiple">                  
-                    @if( $tagArr->count() > 0)
-                      @foreach( $tagArr as $value )
-                      <option value="{{ $value->id }}" {{ old('tags') && in_array($value->id, old('tags') ) ? "selected" : "" }}>
-                      {{ $value->name }}
-                      </option>
-                      @endforeach
-                    @endif
-                  </select>
-                </div>
+                
                 <div class="form-group">
                   <label>Chi tiết</label>
                   <textarea class="form-control" rows="4" name="content" id="content">{{ old('content') }}</textarea>

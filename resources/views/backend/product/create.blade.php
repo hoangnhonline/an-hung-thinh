@@ -45,7 +45,7 @@
                     <option value="">-- chọn --</option>
                     @if( $cateArr->count() > 0)
                       @foreach( $cateArr as $value )
-                      <option value="{{ $value->id }}" {{ $value->id == old('cate_id') ? "selected" : "" }}>{{ $value->name }}</option>
+                      <option value="{{ $value->id }}" {{ $value->id == old('cate_id') || (isset($cate_id) && $cate_id == $value->id) ? "selected" : "" }}>{{ $value->name }}</option>
                       @endforeach
                     @endif
                   </select>
@@ -53,7 +53,7 @@
                 
                 <div class="form-group" >
                   
-                  <label>Tiêu đề <span class="red-star">*</span></label>
+                  <label>Tên sản phẩm <span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
                 <span class=""></span>
@@ -62,7 +62,7 @@
                   <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}">
                 </div>
                 <div class="form-group">                  
-                  <label>Price <span class="red-star">*</span></label>                  
+                  <label>Giá <span class="red-star">*</span></label>                  
                   <input type="text" class="form-control" name="price" id="price" value="{{ old('price') }}">
                 </div>
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
