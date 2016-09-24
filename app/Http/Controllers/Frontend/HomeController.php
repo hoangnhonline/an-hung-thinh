@@ -30,6 +30,12 @@ class HomeController extends Controller
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
         return view('pages.lienhe', compact('settingArr'));
     }
+    public function bangGia(Request $request)
+    {
+        $detail = Pages::find(2);
+        $settingArr = Settings::whereRaw('1')->lists('value', 'name');
+        return view('pages.bang-gia', compact('settingArr', 'detail'));
+    }
     public function sanpham(Request $request)
     {
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
@@ -45,15 +51,16 @@ class HomeController extends Controller
     public function newsList(Request $request)
     {     
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');  
-        $cateDetail = ArticlesCate::where('slug' , 'tin-tuc')->first();
+        $slug = $request->slug;
+        $cateDetail = ArticlesCate::where('slug' , $slug)->first();
 
         $title = trim($cateDetail->meta_title) ? $cateDetail->meta_title : $cateDetail->name;
+        $cate_id = $cateDetail->id;
+        $articlesArr = Articles::where('cate_id', $cate_id)->orderBy('id', 'desc')->paginate(10);
 
-        $articlesArr = Articles::where('cate_id', 1)->orderBy('id', 'desc')->paginate(10);
+        $hotArr = Articles::where( ['cate_id' => $cate_id, 'is_hot' => 1] )->orderBy('id', 'desc')->limit(5)->get();
 
-        $hotArr = Articles::where( ['cate_id' => 1, 'is_hot' => 1] )->orderBy('id', 'desc')->limit(5)->get();
-
-        return view('pages.news-list', compact('title', 'hotArr', 'articlesArr', 'settingArr'));
+        return view('pages.news-list', compact('title', 'hotArr', 'articlesArr', 'settingArr', 'cateDetail'));
     }
     public function chitietsp(Request $request)
     {

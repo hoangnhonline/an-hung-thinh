@@ -124,13 +124,15 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
 });
 Route::group(['namespace' => 'Frontend'], function()
 {
+     Route::get('{slug}-{id}', ['as' => 'loaisp', 'uses' => 'HomeController@loaisp']);
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('/lien-he', ['as' => 'lienhe', 'uses' => 'HomeController@lienhe']);
-    Route::get('/tin-tuc', ['as' => 'news-list', 'uses' => 'HomeController@newsList']);
+    Route::get('/lien-he.html', ['as' => 'lienhe', 'uses' => 'HomeController@lienhe']);
+    Route::get('/bang-gia.html', ['as' => 'bang-gia', 'uses' => 'HomeController@bangGia']);
+    Route::get('/{slug}', ['as' => 'news-list', 'uses' => 'HomeController@newsList']);
     Route::get('/tin-tuc/{slug}-{id}.html', ['as' => 'news-detail', 'uses' => 'HomeController@newsDetail']);
     Route::get('/san-pham', ['as' => 'san-pham', 'uses' => 'HomeController@sanpham']);
-    Route::get('/gioi-thieu', ['as' => 'gioithieu', 'uses' => 'HomeController@gioithieu']);
-    Route::get('{slug}-{id}', ['as' => 'loaisp', 'uses' => 'HomeController@loaisp']);
+    Route::get('/gioi-thieu.html', ['as' => 'gioithieu', 'uses' => 'HomeController@gioithieu']);
+   
     Route::get('san-pham/{slug}-{id}.html', ['as' => 'chitietsp', 'uses' => 'HomeController@chitietsp']);
 });
 
