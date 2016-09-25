@@ -418,11 +418,9 @@ ul.product-info li .name_product {
 /*Thống kê truy cập*/
 .khungtktc {
   text-align: left;
-  margin-top: 0;
+  margin-top: -10px;
   color: #fff;
-  display: inline-block;
-  background-color: #630c0c;
-  padding: 20px;
+  display: inline-block;  
 }
 
 

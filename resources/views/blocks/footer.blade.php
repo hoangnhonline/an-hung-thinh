@@ -1,26 +1,24 @@
 <div id="footer">
     <div class="box_footer container">
       <div class="footer_left">
-        <h3 class="footer-box-tit">CTY Đ&aacute; Granite &amp; Marble</h3>
-        <p><span style="color:#FFFFFF">Địa chỉ: 27 Nguyễn Văn Giai, Phường&nbsp;Đakao, Quận 1, TP. HCM</span></p>
-        <p><span style="color:#FFFFFF">Kho xưởng: 2555 Quốc Lộ 1, P. T&acirc;n Hưng Thuận, Quận 12, TP.HCM</span></p>
-        <p><span style="color:#FFFFFF">Email: thaituangranite@gmail.com</span></p>
-        <p><span style="color:#FFFFFF">Hotline: 0908 387 786 - 0933 080 889</span></p>
+        <h3 class="footer-box-tit">CÔNG TY TNHH ĐẦU TƯ XDTM AN HƯNG THỊNH</h3>
+        <p><span style="color:#FFFFFF">Địa chỉ: 131 đường 9, phường Phước Bình, Quận 9, Hồ Chí Minh</span></p>        
+        <p><span style="color:#FFFFFF">Email: anhungthinh.gov@gmail.com</span></p>
+        <p><span style="color:#FFFFFF">Hotline: 093 857 8439 -0982 414 939</span></p>
         <div class="clear"></div>
       </div>
       <div class="footer-news-list">
         <h3 class="footer-box-tit">Thông tin</h3>
-        <ul>
-          <li><a href="./">Trang chủ</a></li>
-          <li><a href="{!! url('gioi-thieu') !!}">Giới thiệu</a></li>
-          <li><a href="{!! url('san-pham') !!}">Sản phẩm</a></li>
-          <li><a href="{!! url('lien-he') !!}">Liên hệ</a></li>
+        <ul>          
+          <li><a href="{{ route('gioithieu') }}">Giới thiệu</a></li>
+          <li><a href="{{ route('news-list', 'tin-tuc') }}">Tin tức</a></li>
+          <li><a href="{{ route('lienhe') }}">Liên hệ</a></li>
         </ul>
       </div>
       <div class="footer_mid">
         <h3 class="footer-box-tit">Fanpage facebook</h3>
         <div class="khungtktc">
-          
+          <div class="fb-page" data-href="https://www.facebook.com/anhungthinhcompany" data-tabs="timeline" data-width="350" data-height="150" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/anhungthinhcompany" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/anhungthinhcompany">AN HƯNG THỊNH</a></blockquote></div>
         </div>
       </div>
     </div>
@@ -32,7 +30,7 @@
         <tr>
           <td><a class="link_title blink_me ui-link" href="tel:{{ $settingArr['hot_line'] }}"><img src="{{ URL::asset('images/goidien.png') }}"> Gọi điện</a></td>
           <td height="50"><a class="link_title ui-link" target="_blank" href="sms:{{ $settingArr['hot_line'] }}"><img src="{{ URL::asset('images/tuvan.png') }}"> SMS</a></td>
-          <td><a class="link_title ui-link" href="lien-he.html"><img src="{{ URL::asset('images/chiduong.png') }}">Chỉ Đường</a></td>
+          <td><a class="link_title ui-link" href="{{ route('lienhe') }}"><img src="{{ URL::asset('images/chiduong.png') }}">Chỉ Đường</a></td>
         </tr>
       </tbody>
     </table>

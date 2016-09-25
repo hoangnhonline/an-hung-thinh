@@ -8,7 +8,7 @@
     <div class="container_mid">
 
       <div class="about-content">
-        <h3 class="page-title">Tin tức</h3>
+        <h3 class="page-title">{{ $cateDetail->name }}</h3>
         <div class="about-content-main">
            @if( $articlesArr )
                 @foreach( $articlesArr as $articles )

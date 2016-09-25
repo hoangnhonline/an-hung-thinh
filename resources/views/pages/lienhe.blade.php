@@ -253,15 +253,13 @@ function js_submit(){
         
 
         <div class="clear" style="border-bottom:2px solid #E2D9CF; margin-bottom:20px;">&nbsp;</div>
-    <p><span style="font-size:16px"><span style="color:#B22222"><strong>CTY GRANITE &amp; MARBLE</strong></span></span></p>
+    <p><span style="font-size:16px"><span style="color:#B22222"><strong>CÔNG TY TNHH ĐẦU TƯ XÂY DỰNG THƯƠNG MẠI AN HƯNG THỊNH</strong></span></span></p>
 
-<p><span style="color:rgb(0, 0, 0); font-family:arial; font-size:12px"><strong>Địa chỉ:</strong>&nbsp; 27 Nguyễn Văn Giải, P. Đakao, Quận 1, TP. HCM</span></p>
+<p><span style="color:rgb(0, 0, 0); font-family:arial; font-size:12px"><strong>Địa chỉ:</strong>&nbsp; 131 đường 9, phường Phước Bình, Quận 9, Hồ Chí Minh</span></p>
 
-<p><span style="font-size:12px"><strong>Địa Chỉ Kho Xưởng</strong>: 2555 Quốc Lộ 1, P Tân Hưng Thuận, Quận 12, TP. HCM</span></p>
+<p><span style="color:rgb(0, 0, 0); font-family:arial; font-size:12px"><strong>Điện thoại:</strong>&nbsp; <em><strong>093 857 8439 - 0982 414 939</strong></em></span></p>
 
-<p><span style="color:rgb(0, 0, 0); font-family:arial; font-size:12px"><strong>Điện thoại:</strong>&nbsp; <em><strong>0908 387 786 - 0933 080 889</strong></em></span></p>
-
-<p><span style="color:rgb(0, 0, 0); font-family:arial; font-size:12px"><strong>Email:</strong>&nbsp; thaituangranite@gmail.com</span></p>
+<p><span style="color:rgb(0, 0, 0); font-family:arial; font-size:12px"><strong>Email:</strong>&nbsp;  anhungthinh.gov@gmail.com</span></p>
         <div class="clear" style="border-bottom:2px solid #E2D9CF; margin-bottom:20px;">&nbsp;</div>
         <form method="post" name="frm" class="forms" action="#">
             <div class="tbl-contacts">

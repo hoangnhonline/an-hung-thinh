@@ -1,6 +1,6 @@
 <div id="header" style="background:url('{{ URL::asset('images/16543300.png') }}') no-repeat;background-size: 100% 100%;">
-    <div class="banner"> <img src="{{ URL::asset('images/an-hung-thinh-banner.png') }}" style="width:100%;" alt="http://dahoacuong.co/"/>
-      <div class="logo_header"> <a href="./"> <img src="{{ URL::asset('images/logo.png') }}" height="100"> </a> </div>
+    <div class="banner"> <img src="{{ URL::asset('images/an-hung-thinh-banner.png') }}" style="width:100%;" alt="banner dagranit.vn"/>
+      <div class="logo_header"> <a href="./"> <img src="{{ Helper::showImage($settingArr['logo']) }}" height="100"> </a> </div>
       <div class="hotline" >{{ $settingArr['hot_line'] }}</div>
       <div class="box_icon">
         <div class="title">Follow us: </div>
@@ -17,7 +17,7 @@
       <ul>
         <li><a href="{{ route('home') }}" class="font_custom active">Trang chủ</a></li>
         <li class="line">&nbsp;</li>
-        <li><a href="{!! url('gioi-thieu') !!}" class="font_custom ">Giới thiệu</a></li>
+        <li><a href="{{ route('gioithieu') }}" class="font_custom ">Giới thiệu</a></li>
         <li class="line">&nbsp;</li>
         <li><a href="javascript:void(0)" class="font_custom ">Sản phẩm</a>
           <ul>
@@ -30,13 +30,14 @@
           </ul>
         </li>
         <li class="line">&nbsp;</li>
-        <li><a href="{{ route('news-list') }}" class="font_custom ">Tin tức</a></li>
+        <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>
         <li class="line">&nbsp;</li>
-        <li><a href="{!! url('lien-he') !!}" class="font_custom ">Liên hệ</a></li>
-        <div class="box_search">
-          <input type="button" value=" " onclick="return false;" />
-          <input type="text" name="keyword" id="keyword" value="Tìm kiếm..." onblur="textboxChange(this,false,'Tìm kiếm...')" onfocus="textboxChange(this,true,'Tìm kiếm...')" onkeypress="return false;"/>
-        </div>
+        <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>              
+         <li class="line">&nbsp;</li>
+        <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>      
+        <li class="line">&nbsp;</li>
+        <li><a href="{{ route('lienhe') }}" class="font_custom ">Liên hệ</a></li>
+        
       </ul>
       <div class="clear"></div>
     </div>
@@ -91,7 +92,8 @@
               @endforeach
               </ul>
             </li>
-            <li><a href="{{ route('news-list') }}" class="font_custom ">Tin tức</a></li>
+            <li><a href="{{ route('news-list', 'tu-van') }}" class="font_custom ">Tư vấn</a></li>
+            <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>
             <li><a href="{!! url('lien-he') !!}" class="font_custom ">Liên hệ</a></li>
           </ul>
         </div>
