@@ -9,7 +9,6 @@
 <meta name="robots" content="index,follow" />
 <meta name="author" content="" />
 <meta name="copyright" content="ĐÁ HOA CƯƠNG .CO" />
-
 <!-- Google Plus -->
 <html itemscope itemtype="http://schema.org/Product">
 <meta itemprop="name" content="ĐÁ HOA CƯƠNG .CO">
@@ -50,13 +49,6 @@
 <script type="text/javascript" src="{{ URL::asset('assets/animate/wow.min.js') }}"></script>
 <script src="{{ URL::asset('assets/animate/wow_animate.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/script_scroll/plugins-scroll.js') }}"></script>
-
-<!--Tooltip Ajax-->
-<link href="{{ URL::asset('assets/Tooltip_ajax/tootstip.css') }}" rel="stylesheet" type="text/css" />
-<script src="{{ URL::asset('assets/Tooltip_ajax/ajax.js') }}" type="text/javascript"></script>
-<script src="{{ URL::asset('assets/Tooltip_ajax/ajax-dynamic-content.js') }}" type="text/javascript"></script>
-<script src="{{ URL::asset('assets/Tooltip_ajax/home.js') }}" type="text/javascript"></script>
-<!--End Tooltip Ajax-->
 
 <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet" type="text/css" media="(min-width: 980px)">
@@ -104,6 +96,15 @@
 <!--End back to top-->
 <div class="scroll-top"> <img src="{{ URL::asset('images/icon-scroll-top.png') }}" alt="Lên đầu trang" /> </div>
 <!--scroll-top-->
-
+<div id='ads-left'>
+  <div style='margin:0 0 5px 0; padding:0;position:fixed; left:0; top:175px;z-index: 999'>
+    <a href='#' target='_blank'><img border='0' src='http://anhungthinh.com.vn/wp-content/uploads/2016/08/banner-AHT-l.png' width='100'/></a>
+  </div>
+</div>
+<div id='ads-right'>
+  <div style='margin:0 0 5px 0; padding:0; position:fixed; right:0; top:175px;;z-index: 999'>
+    <a href='#' target='_blank'><img border='0' src='http://anhungthinh.com.vn/wp-content/uploads/2016/08/banner-AHT-r.png' width='100'/></a>
+  </div>
+</div>
 </body>
 </html>
