@@ -21,7 +21,7 @@ class ImagesController extends Controller
     */
     public function index(Request $request)
     {
-        $album_id = isset($request->album_id) ? $request->album_id : 0;      
+        $album_id = isset($request->album_id) ? $request->album_id : 1;      
         
         $query = Images::whereRaw('1');
 

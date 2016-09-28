@@ -45,7 +45,7 @@
                     <option value="">-- chọn --</option>
                     @if( $cateArr->count() > 0)
                       @foreach( $cateArr as $value )
-                      <option value="{{ $value->id }}" {{ $value->id == old('cate_id') ? "selected" : "" }}>{{ $value->name }}</option>
+                      <option value="{{ $value->id }}" {{ $value->id == old('cate_id') || (isset($cate_id) && $cate_id == $value->id) ? "selected" : "" }}>{{ $value->name }}</option>
                       @endforeach
                     @endif
                   </select>
@@ -60,8 +60,7 @@
                 <div class="form-group">                  
                   <label>Slug <span class="red-star">*</span></label>                  
                   <input type="text" class="form-control" name="slug" id="slug" value="{{ old('slug') }}">
-                </div>
-                
+                </div>                
                 <div class="form-group" style="margin-top:10px;margin-bottom:10px">  
                   <label class="col-md-3 row">Thumbnail </label>    
                   <div class="col-md-9">
@@ -83,7 +82,7 @@
                   <div class="checkbox">
                     <label>
                       <input type="checkbox" name="is_hot" value="1" {{ old('is_hot') == 1 ? "checked" : "" }}>
-                      Phim nổi bật
+                      Nổi bật
                     </label>
                   </div>               
                 </div>
@@ -93,19 +92,7 @@
                     <option value="0" {{ old('status') == 0 ? "selected" : "" }}>Ẩn</option>
                     <option value="1" {{ old('status') == 1 || old('status') == NULL ? "selected" : "" }}>Hiện</option>                  
                   </select>
-                </div>
-                <div class="form-group">
-                  <label>Tags</label>
-                  <select class="form-control select2" name="tags[]" id="tags" multiple="multiple">                  
-                    @if( $tagArr->count() > 0)
-                      @foreach( $tagArr as $value )
-                      <option value="{{ $value->id }}" {{ old('tags') && in_array($value->id, old('tags') ) ? "selected" : "" }}>
-                      {{ $value->name }}
-                      </option>
-                      @endforeach
-                    @endif
-                  </select>
-                </div>
+                </div>                
                 <div class="form-group">
                   <label>Chi tiết</label>
                   <textarea class="form-control" rows="4" name="content" id="content">{{ old('content') }}</textarea>

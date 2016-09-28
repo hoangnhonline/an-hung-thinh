@@ -21,7 +21,7 @@ class ArticlesController extends Controller
     */
     public function index(Request $request)
     {
-        $cate_id = isset($request->cate_id) ? $request->cate_id : 0;
+        $cate_id = isset($request->cate_id) ? $request->cate_id : 1;
 
         $title = isset($request->title) && $request->title != '' ? $request->title : '';
         
@@ -50,10 +50,10 @@ class ArticlesController extends Controller
     {
 
         $cateArr = ArticlesCate::all();
-
+        $cate_id = $request->cate_id;
         $tagArr = Tag::where('type', 2)->orderBy('id', 'desc')->get();
 
-        return view('backend.articles.create', compact( 'tagArr', 'cateArr' ));
+        return view('backend.articles.create', compact( 'tagArr', 'cateArr', 'cate_id'));
     }
 
     /**

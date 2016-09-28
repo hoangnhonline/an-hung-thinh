@@ -93,17 +93,7 @@
                     <option value="0" {{ $detail->status == 0 ? "selected" : "" }}>Ẩn</option>
                     <option value="1" {{ $detail->status == 1 || $detail->status == NULL ? "selected" : "" }}>Hiện</option>                  
                   </select>
-                </div>
-                <div class="form-group">
-                  <label>Tags</label>
-                  <select class="form-control select2" name="tags[]" id="tags" multiple="multiple">                  
-                    @if( $tagArr->count() > 0)
-                      @foreach( $tagArr as $value )
-                      <option value="{{ $value->id }}" >{{ $value->name }}</option>
-                      @endforeach
-                    @endif
-                  </select>
-                </div>
+                </div>                
                 <div class="form-group">
                   <label>Chi tiết</label>
                   <textarea class="form-control" rows="4" name="content" id="content">{{ $detail->content }}</textarea>

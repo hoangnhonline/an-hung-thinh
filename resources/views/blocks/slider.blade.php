@@ -28,15 +28,17 @@
       <div class="container_wrapper">
         <div class="boxab_l">
           <div class="about-slide" style="width:330px; float:left">
+          <?php 
+                $tmpArr = DB::table('images')->where('album_id', 4)->get();                  
+                ?>
+                @foreach( $tmpArr as $img )
             <div class="picaboutnb">
-              <img src="{{ Helper::showImage( $about->image_url ) }}" alt="da hoa cuong An Hung Thinh">
+              <img src="{{ Helper::showImage( $img->image_url ) }}" alt="da hoa cuong An Hung Thinh">
             </div>            
-            <div class="picaboutnb">
-              <img src="{{ Helper::showImage( $about->image_url ) }}" alt="da hoa cuong An Hung Thinh">
-            </div>
+             @endforeach
           </div>
           <div class="boxcontentabout">
-            <div class="nameaboutnb"><a href="gioi-thieu/da-granite-va-marble-3.html">Đá Granite và Marble</a></div>
+            <div class="nameaboutnb"><a href="{{ route('gioithieu') }}">Đá Granite và Marble</a></div>
             <div class="contentnb">{{ $about->description }}</div>
             <span><a href="{{ route('gioithieu') }}"> Chi tiết >> </a></span> </div>
         </div>

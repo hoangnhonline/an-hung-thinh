@@ -20,16 +20,16 @@
       @if(Session::has('message'))
       <p class="alert alert-info" >{{ Session::get('message') }}</p>
       @endif
-      <a href="{{ route('articles.create') }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
+      <a href="{{ route('articles.create', ['cate_id' => $cate_id]) }}" class="btn btn-info" style="margin-bottom:5px">Tạo mới</a>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Bộ lọc</h3>
         </div>
         <div class="panel-body">
-          <form class="form-inline" role="form" method="GET" action="{{ route('articles.index') }}">            
+          <form class="form-inline" role="form" method="GET" action="{{ route('articles.index') }}" id="searchForm">            
             <div class="form-group">
               <label for="email">Danh mục </label>
-              <select class="form-control select2" name="cate_id" id="cate_id">
+              <select class="form-control" name="cate_id" id="cate_id">
                 <option value="">--Tất cả--</option>
                 @if( $cateArr->count() > 0)
                   @foreach( $cateArr as $value )
@@ -42,7 +42,7 @@
               <label for="email">Từ khóa :</label>
               <input type="text" class="form-control" name="title" value="{{ $title }}">
             </div>
-            <button type="submit" class="btn btn-default">Lọc</button>
+            <button type="submit" class="btn btn-default" style="margin-top:-10px">Lọc</button>
           </form>         
         </div>
       </div>
@@ -59,8 +59,10 @@
           </div>  
           <table class="table table-bordered" id="table-list-data">
             <tr>
-              <th style="width: 1%">#</th>              
+              <th style="width: 1%">#</th> 
+              @if($cate_id != 3)             
               <th>Thumbnail</th>
+              @endif
               <th>Tiêu đề</th>
               <th width="1%;white-space:nowrap">Thao tác</th>
             </tr>
@@ -71,9 +73,11 @@
                 <?php $i ++; ?>
               <tr id="row-{{ $item->id }}">
                 <td><span class="order">{{ $i }}</span></td>       
+                @if($item->cate_id != 3)
                 <td>
                   <img class="img-thumbnail lazy" data-original="{{ Helper::showImage($item->image_url)}}" width="145">
                 </td>        
+                @endif
                 <td>                  
                   <a href="{{ route( 'articles.edit', [ 'id' => $item->id ]) }}">{{ $item->title }}</a>
                   
@@ -146,7 +150,9 @@ $(document).ready(function(){
     });
   });
   $('.select2').select2();
-
+  $('#cate_id').change(function(){
+    $('#searchForm').submit();
+  });
   $('#table-list-data tbody').sortable({
         placeholder: 'placeholder',
         handle: ".move",
