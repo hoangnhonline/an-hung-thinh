@@ -27,7 +27,14 @@
     <div class="fullboxaboutnb">
       <div class="container_wrapper">
         <div class="boxab_l">
-          <div class="picaboutnb"> <a href="{{ route('gioithieu') }}"><img src="{{ Helper::showImage( $about->image_url ) }}" alt="da hoa cuong An Hung Thinh"></a> </div>
+          <div class="about-slide" style="width:330px; float:left">
+            <div class="picaboutnb">
+              <img src="{{ Helper::showImage( $about->image_url ) }}" alt="da hoa cuong An Hung Thinh">
+            </div>            
+            <div class="picaboutnb">
+              <img src="{{ Helper::showImage( $about->image_url ) }}" alt="da hoa cuong An Hung Thinh">
+            </div>
+          </div>
           <div class="boxcontentabout">
             <div class="nameaboutnb"><a href="gioi-thieu/da-granite-va-marble-3.html">Đá Granite và Marble</a></div>
             <div class="contentnb">{{ $about->description }}</div>
@@ -48,8 +55,7 @@
                   </div>
                   <!--<div class="namekx"> <a class="fancy_khoxuong" rel="grp_khoxuong2" href="upload/news/05408920.jpg"> dahoacuong.co </a> </div>-->
                 </li>                      
-                @endforeach
-              
+                @endforeach             
               
             </ul>
           </div>

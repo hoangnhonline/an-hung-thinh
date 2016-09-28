@@ -11,7 +11,6 @@
 <meta name="copyright" content="dagranit.vn" />
 <meta itemprop="name" content="dagranit.vn">
 <meta itemprop="description" content="dagranit.vn">
-<meta itemprop="image" content="upload/hinhanh/11532792.png">
 <meta name="viewport" content="width=1200">
 <meta name="DC.title" content="dagranit.vn" />
 <meta name="DC.language" scheme="utf-8" content="vi" />
@@ -22,9 +21,7 @@
 <meta property="og:site_name" content="dagranit.vn" />
 <meta property="og:type" content="Website" />
 <meta property="og:title" content="dagranit.vn" />
-<meta property="og:image" content="upload/hinhanh/11532792.png" />
-<meta property="og:description" content="dahoacuong.co" />
-<link href="{{ URL::asset('upload/hinhanh/11532792.png') }}" rel="shortcut icon" type="image/x-icon" />
+<meta property="og:description" content="dagranit.vn" />
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/bootstrap-3.2.0/css/bootstrap.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/font.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/fancybox/jquery.fancybox.css') }}" media="screen" />
@@ -96,16 +93,19 @@
           background-size: 15px 26px !important;
       }
       #doitac button.slick-arrow {
-    background-color: transparent!important;
-    width: 15px;
-    height: 26px;
-    position: absolute;
-    z-index: 999;
-    border: 0px !important;
-    padding: 0 !important;
-    margin: 0px !important;
-    border-radius: 0px !important;
-}
+          background-color: transparent!important;
+          width: 15px;
+          height: 26px;
+          position: absolute;
+          z-index: 999;
+          border: 0px !important;
+          padding: 0 !important;
+          margin: 0px !important;
+          border-radius: 0px !important;
+      }
+      .slick-dotted.slick-slider{
+        margin-bottom: 0px !important;
+      }
   </style>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/jquery-ui.js') }}"></script>
@@ -127,7 +127,17 @@
       slidesToScroll: 1,      
       infinite: true,
       centerMode: true,
-      variableWidth: true
+      variableWidth: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
+    $('.about-slide').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots : true,    
+      autoplay: true,
+      autoplaySpeed: 2000,
     });
   });
 
