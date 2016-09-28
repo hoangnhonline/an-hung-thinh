@@ -8,24 +8,20 @@
 <meta name="keywords" content="">
 <meta name="robots" content="index,follow" />
 <meta name="author" content="" />
-<meta name="copyright" content="ĐÁ HOA CƯƠNG .CO" />
-<!-- Google Plus -->
-<html itemscope itemtype="http://schema.org/Product">
-<meta itemprop="name" content="ĐÁ HOA CƯƠNG .CO">
-<meta itemprop="description" content="ĐÁ HOA CƯƠNG .CO">
+<meta name="copyright" content="dagranit.vn" />
+<meta itemprop="name" content="dagranit.vn">
+<meta itemprop="description" content="dagranit.vn">
 <meta itemprop="image" content="upload/hinhanh/11532792.png">
 <meta name="viewport" content="width=1200">
-<meta name="DC.title" content="ĐÁ HOA CƯƠNG .CO" />
+<meta name="DC.title" content="dagranit.vn" />
 <meta name="DC.language" scheme="utf-8" content="vi" />
 <meta name="DC.identifier" content="index.html" />
 <meta name="robots" content="index,follow" />
 <meta name='revisit-after' content='1 days' />
 <meta http-equiv="content-language" content="vi" />
-<meta property="og:site_name" content="ĐÁ HOA CƯƠNG .CO" />
-<meta property="og:url" content="index.html" />
-<meta type="og:url" content="index.html" >
+<meta property="og:site_name" content="dagranit.vn" />
 <meta property="og:type" content="Website" />
-<meta property="og:title" content="ĐÁ HOA CƯƠNG .CO" />
+<meta property="og:title" content="dagranit.vn" />
 <meta property="og:image" content="upload/hinhanh/11532792.png" />
 <meta property="og:description" content="dahoacuong.co" />
 <link href="{{ URL::asset('upload/hinhanh/11532792.png') }}" rel="shortcut icon" type="image/x-icon" />
@@ -43,6 +39,10 @@
 <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet" type="text/css" media="(min-width: 980px)">
 <link href="{{ URL::asset('css/style_mobile.css') }}" rel="stylesheet" type="text/css">
+
+<link href="{{ URL::asset('assets/slick/slick.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ URL::asset('assets/slick/slick-theme.css') }}" rel="stylesheet" type="text/css">
+
 <script type="text/javascript" src="{{ URL::asset('js/jquery.min.1.10.js') }}"></script>
 </head>
 
@@ -75,7 +75,38 @@
     <a href='#' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-r.png') }}" width='100' /></a>
   </div>
 </div>
-
+<style type="text/css">
+     
+      #doitac img {
+        border: 1px solid #ddd !important;
+      }
+      #doitac .item-cus{
+          padding-right: 12px;
+          text-align: center !important;
+          display: inline-block !important;
+          float: none !important;
+          vertical-align: middle !important;
+      }
+       #doitac button.slick-prev,  #doitac button.slick-prev:hover,  #doitac button.slick-prev:focus {
+          background: url({{ URL::asset('assets/images/arrow-left.png') }}) 0 0 no-repeat !important;
+          background-size: 15px 26px !important;
+      }
+       #doitac button.slick-next,  #doitac button.slick-next:hover,  #doitac button.slick-next:focus {
+          background: url({{ URL::asset('assets/images/arrow-right.png') }}) 0 0 no-repeat !important;
+          background-size: 15px 26px !important;
+      }
+      #doitac button.slick-arrow {
+    background-color: transparent!important;
+    width: 15px;
+    height: 26px;
+    position: absolute;
+    z-index: 999;
+    border: 0px !important;
+    padding: 0 !important;
+    margin: 0px !important;
+    border-radius: 0px !important;
+}
+  </style>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/jquery-ui.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/fancybox/jquery.fancybox.js') }}"></script>
@@ -85,8 +116,21 @@
 <script type="text/javascript" src="{{ URL::asset('assets/owl.carousel2.4/owl.carousel.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/simplyscroll/jquery.simplyscroll.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/animate/wow.min.js') }}"></script>
-<script src="{{ URL::asset('assets/animate/wow_animate.js') }}"></script>
-
+<script type="text/javascript" src="{{ URL::asset('assets/animate/wow_animate.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/script_scroll/plugins-scroll.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/slick/slick.js') }}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.customers').slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,      
+      infinite: true,
+      centerMode: true,
+      variableWidth: true
+    });
+  });
+
+</script>
 </body>
 </html>
