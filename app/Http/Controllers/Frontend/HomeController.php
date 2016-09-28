@@ -30,12 +30,13 @@ class HomeController extends Controller
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
         return view('pages.lienhe', compact('settingArr'));
     }
-    public function bangGia(Request $request)
+    public function detailPrice(Request $request)
     {
-        $detail = Pages::find(2);
+        $detail = Articles::find($request->id);
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
         return view('pages.bang-gia', compact('settingArr', 'detail'));
     }
+
     public function sanpham(Request $request)
     {
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');

@@ -34,7 +34,17 @@
         <li class="line">&nbsp;</li>
         <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>              
          <li class="line">&nbsp;</li>
-        <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>      
+        <li>
+          <a href="javascript:void(0)" class="font_custom ">Bảng giá</a>
+          <ul>
+            <?php 
+            $loaisp = DB::table('articles')->where('cate_id', 3)->orderBy('id')->get();
+            ?>
+            @foreach($loaisp as $row)
+            <li><a href="{!! route('detail-price', [$row->slug, $row->id]) !!}">{!! $row->title !!}</a> </li>
+            @endforeach
+          </ul>
+        </li>      
         <li class="line">&nbsp;</li>
         <li><a href="{{ route('lienhe') }}" class="font_custom ">Liên hệ</a></li>
         

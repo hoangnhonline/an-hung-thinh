@@ -8,7 +8,7 @@
       <div class="container_mid">
 
         <div class="about-content">
-          <h3 class="page-title">Bảng giá</h3>
+          <h3 class="page-title">Bảng giá {{ mb_strtolower($detail->title, 'UTF-8') }}</h3>
           <div class="about-content-main">
             <?php echo $detail->content; ?>
           </div><!-- about-detail -->

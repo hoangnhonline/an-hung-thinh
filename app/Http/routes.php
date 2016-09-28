@@ -125,6 +125,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'backend', 'middleware' => '
 Route::group(['namespace' => 'Frontend'], function()
 {
      Route::get('{slug}-{id}', ['as' => 'loaisp', 'uses' => 'HomeController@loaisp']);
+     Route::get('/bang-gia/{slug}-{id}.html', ['as' => 'detail-price', 'uses' => 'HomeController@detailPrice']);
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('/lien-he.html', ['as' => 'lienhe', 'uses' => 'HomeController@lienhe']);
     Route::get('/bang-gia.html', ['as' => 'bang-gia', 'uses' => 'HomeController@bangGia']);
