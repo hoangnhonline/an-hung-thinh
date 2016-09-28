@@ -106,6 +106,12 @@
       .slick-dotted.slick-slider{
         margin-bottom: 0px !important;
       }
+      .comment-content{
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: justify;
+      }
   </style>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/jquery-ui.js') }}"></script>
@@ -136,6 +142,13 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       dots : true,    
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
+    $('#customer-comment').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1, 
       autoplay: true,
       autoplaySpeed: 2000,
     });

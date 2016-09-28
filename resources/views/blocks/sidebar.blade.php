@@ -37,7 +37,22 @@
             <div class="clear"></div>
           </div>
         </div>
-        
+        <!--HỖ TRỢ TRỰC TUYẾN-->
+        <div class="module_left">
+          <div class="title">
+            <h2>Ý Kiến khách hàng</h2>
+          </div>
+          <div class="content" id="customer-comment">
+              <div class="comment-content">
+                  <p>Đội ngũ chuyên nghiệp, tư vấn nhiệt tình. Cảm ơn AN HƯNG THỊNH đã giúp chúng tôi xây dựng những công trình tuyệt vời.</p>
+                  <span style="color:blue;float:right">Mr. Thi</span>
+              </div>
+              <div class="comment-content">
+                  <p>Công ty làm việc chuyên nghiệp , kiến trúc sư lành nghề , tôi sẽ hợp tác với AN HƯNG THỊNH trong các dự án tiếp theo.</p>
+                  <span style="color:blue;float:right">Mr. Dũng</span>
+              </div>              
+          </div>
+        </div>
         <!--HỖ TRỢ TRỰC TUYẾN-->
         <div class="module_left">
           <div class="title">
