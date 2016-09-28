@@ -29,9 +29,9 @@
         <div class="boxab_l">
           <div class="about-slide" style="width:330px; float:left">
           <?php 
-                $tmpArr = DB::table('images')->where('album_id', 4)->get();                  
-                ?>
-                @foreach( $tmpArr as $img )
+            $tmpArr = DB::table('images')->where('album_id', 4)->get();                  
+            ?>
+            @foreach( $tmpArr as $img )
             <div class="picaboutnb">
               <img src="{{ Helper::showImage( $img->image_url ) }}" alt="da hoa cuong An Hung Thinh">
             </div>            

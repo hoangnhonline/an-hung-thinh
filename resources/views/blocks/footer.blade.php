@@ -4,13 +4,12 @@
       <h4 style="color:#0000DD;margin-bottom:10px" >KHÁCH HÀNG – ĐỐI TÁC</h4>
       <div class="clearfix"></div>
         <div class="customers">
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/dong-a-bank-logo.png') }}"  width="250" height="125" alt=""></div>
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/hoa-phat-logo.png') }}"  width="250" height="125" alt=""></div>
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/hoclim-logo.png') }}"  width="250" height="125" alt=""></div>
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/linax-logo.png') }}"  width="250" height="125" alt=""></div>
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/pomina.png') }}"  width="250" height="125" alt=""></div>
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/Viglacera-logo.png') }}"  width="250" height="125" alt=""></div>
-          <div class="item-cus"><img src="{{ URL::asset('assets/logo/vnpt-logo.png') }}"  width="250" height="125" alt=""></div>
+          <?php 
+            $tmpArr = DB::table('images')->where('album_id', 5)->get();                  
+            ?>
+            @foreach( $tmpArr as $img )
+          <div class="item-cus"><img src="{{ Helper::showImage( $img->image_url ) }}"  width="250" height="125" alt="doi tac An Hung Thinh"></div>
+          @endforeach
         </div>
       </div>
     </div>

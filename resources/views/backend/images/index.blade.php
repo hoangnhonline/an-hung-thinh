@@ -38,7 +38,7 @@
                 @endif
               </select>
             </div>
-            <button type="submit" class="btn btn-default">Lọc</button>
+            <button type="submit" class="btn btn-default" style="margin-top:-10px">Lọc</button>
           </form>         
         </div>
       </div>
