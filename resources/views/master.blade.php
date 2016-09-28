@@ -112,6 +112,16 @@
         font-weight: bold;
         text-align: justify;
       }
+      .contact-face {
+        position: fixed;
+        right: 0;
+        bottom: -300px;
+        z-index: 10000;
+        width: 320px;
+        -webkit-transition: width .5s;
+        transition: width .5s;
+        line-height: 25px;
+    }
   </style>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/jquery-ui.js') }}"></script>
@@ -153,7 +163,29 @@
       autoplaySpeed: 2000,
     });
   });
-
+function closeface() {
+    jQuery('.xclose').css('display', 'none');
+    jQuery('.xopen').css('display', 'block');
+    jQuery('.contact-face').css('bottom', '-300px');
+}
+function openface() {
+    jQuery('.xclose').css('display', 'block');
+    jQuery('.xopen').css('display', 'none');
+    jQuery('.contact-face').css('bottom', '0');
+}
 </script>
+<div class="contact-face" style="">
+        <div class="title_quancaog" style="background: #1f7c14;color: #fff;padding: 3px 10px;cursor:pointer;">
+        <p class="xclose" style="display: none;margin: 0;" onclick="closeface();"><i class="fa fa-minus" aria-hidden="true" style="margin-right: 10px;"></i>Hỗ trợ trực tuyến</p>
+        <p class="xopen" style="margin: 0;" onclick="openface();"><i class="fa fa-envelope-o" style="margin-right: 10px;" aria-hidden="true"></i>Để lại lời nhắn</p>
+    </div>
+    <div class="fb-page" data-tabs="messages" data-href="https://www.facebook.com/anhungthinhcompany/" data-width="320px" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+        <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://www.facebook.com/anhungthinhcompany/">
+                <a href="https://www.facebook.com/anhungthinhcompany/">An Hung Thinh</a>
+            </blockquote>
+        </div>
+    </div>
+</div>
 </body>
 </html>
