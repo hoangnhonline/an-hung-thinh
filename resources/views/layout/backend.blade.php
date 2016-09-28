@@ -22,11 +22,7 @@
   <link rel="stylesheet" href="{{ URL::asset('be/plugins/iCheck/flat/blue.css') }}">
 
   <link rel="stylesheet" href="{{ URL::asset('be/dist/css/sweetalert2.min.css') }}">  
-  <link rel="stylesheet" href="{{ URL::asset('be/dist/css/select2.min.css') }}">
-  <!-- Morris chart -->
-4
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <link rel="stylesheet" href="{{ URL::asset('be/dist/css/select2.min.css') }}">  
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
