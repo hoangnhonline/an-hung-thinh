@@ -28,9 +28,9 @@
     <table class="table-style" cellpadding="0" cellspacing="0">
       <tbody>
         <tr>
-          <td><a class="link_title blink_me ui-link" href="tel:{{ $settingArr['hot_line'] }}"><img src="{{ URL::asset('images/goidien.png') }}"> Gọi điện</a></td>
-          <td height="50"><a class="link_title ui-link" target="_blank" href="sms:{{ $settingArr['hot_line'] }}"><img src="{{ URL::asset('images/tuvan.png') }}"> SMS</a></td>
-          <td><a class="link_title ui-link" href="{{ route('lienhe') }}"><img src="{{ URL::asset('images/chiduong.png') }}">Chỉ Đường</a></td>
+          <td><a class="link_title blink_me ui-link" href="tel:{{ $settingArr['hot_line'] }}"><img class="lazy" data-original="{{ URL::asset('images/goidien.png') }}"> Gọi điện</a></td>
+          <td height="50"><a class="link_title ui-link" target="_blank" href="sms:{{ $settingArr['hot_line'] }}"><img class="lazy" data-original="{{ URL::asset('images/tuvan.png') }}"> SMS</a></td>
+          <td><a class="link_title ui-link" href="{{ route('lienhe') }}"><img class="lazy" data-original="{{ URL::asset('images/chiduong.png') }}">Chỉ Đường</a></td>
         </tr>
       </tbody>
     </table>

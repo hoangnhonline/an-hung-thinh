@@ -98,6 +98,7 @@ $(document).ready(function(e) {
 		
 });
 $(document).ready(function(e) {
+	$('img.lazy').lazyload();
 	$('.item .img-thumb').click(function(){
 		var id=$(this).attr('data-id');
 		
@@ -112,9 +113,27 @@ $(document).ready(function(e) {
 				$(this).animate({"opacity":1},1000);
 			}
 		});
-	})
-});
+	});
 
+});
+ $(window).scroll(function(){
+    if($(window).scrollTop()>50){
+        $('.scroll-top').show(500);
+    }else{
+        $('.scroll-top').hide(500);
+    }
+});
+$(document).ready(function(e) {
+    $('.scroll-top img').click(function(){
+        $('html, body').stop().animate({
+            scrollTop: 0
+            }, 500, function() {
+            $('#goTop').stop().animate({
+            top: '-100px'
+            }, 500);
+        });
+    })
+});
 function smoothScrolling() { /*-------------------------------------------------*/
 /* =  smooth scroll in chrome
 /*-------------------------------------------------*/

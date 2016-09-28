@@ -51,7 +51,7 @@
             <div class="clear"></div>
             <div class="box-hotro" >
               <div class="box-icon clearfix">
-                <div class="namehotro"> <span>{{ $settingArr['ten_skype_1'] }}</span> <a href="Skype:{{ $settingArr['nick_skype_1'] }}?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="{{ $settingArr['ten_skype_1'] }}"/> </a></div>               
+                <div class="namehotro"> <span>{{ $settingArr['ten_skype_1'] }}</span> <a href="Skype:{{ $settingArr['nick_skype_1'] }}?chat"><img data-original="{{ URL::asset('images/ico-sky.png') }}"  alt="{{ $settingArr['ten_skype_1'] }}" class="lazy"/> </a></div>               
                
                 <div class="clear"></div>
               </div>
@@ -59,7 +59,7 @@
             <div class="clear"></div>
             <div class="box-hotro" style="border-bottom:none;margin-bottom:10px">
               <div class="box-icon clearfix">
-                <div class="namehotro"> <span>{{ $settingArr['ten_skype_2'] }}</span> <a href="Skype:{{ $settingArr['nick_skype_2'] }}?chat"><img src="{{ URL::asset('images/ico-sky.png') }}"  alt="{{ $settingArr['ten_skype_2'] }}"/></a></div>             
+                <div class="namehotro"> <span>{{ $settingArr['ten_skype_2'] }}</span> <a href="Skype:{{ $settingArr['nick_skype_2'] }}?chat"><img data-original="{{ URL::asset('images/ico-sky.png') }}"  alt="{{ $settingArr['ten_skype_2'] }}" class="lazy"/></a></div>             
                
                 <div class="clear"></div>
               </div>
@@ -111,7 +111,7 @@
                   @foreach( $tmpArr as $img )
                   <div class="picpronew"> 
                     <a class="fancybox" rel="group" href="{{ Helper::showImage( $img->image_url ) }}">
-                       <img src="{{ Helper::showImage($img->image_url) }}" alt="hinh anh">
+                       <img data-original="{{ Helper::showImage($img->image_url) }}" alt="hinh anh" class="lazy">
                     </a> 
                   </div>                  
                   @endforeach

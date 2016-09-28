@@ -21,8 +21,8 @@
           <div class="clear"></div>
         </div>
       </div>
-      <script type="text/javascript" src="assets/wowslider/wowslider.js"></script> 
-      <script type="text/javascript" src="assets/wowslider/script.js"></script> 
+      <script type="text/javascript" src="{{ URL::asset('assets/wowslider/wowslider.js') }}"></script> 
+      <script type="text/javascript" src="{{ URL::asset('assets/wowslider/script.js') }}"></script> 
     </div>
     <div class="fullboxaboutnb">
       <div class="container_wrapper">
@@ -43,7 +43,7 @@
                 <li class="item">
                   <div class="boxpickx"> 
                         
-                      <img src="{{ Helper::showImage($img->image_url) }}" alt="dagranit.vn" height="197"> 
+                      <img src="{{ Helper::showImage($img->image_url) }}" alt="dagranit.vn" height="197">
                    
                   </div>
                   <!--<div class="namekx"> <a class="fancy_khoxuong" rel="grp_khoxuong2" href="upload/news/05408920.jpg"> dahoacuong.co </a> </div>-->

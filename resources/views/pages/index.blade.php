@@ -39,12 +39,12 @@
               @foreach($sp as $row1)
               <div class="item_product wow fadeInUp col-md-3 col-sm-4 col-xs-6"> 
                 <div class="images"> 
-                  <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html" ><img src="{{ URL::asset('uploads') }}/{!! $row1->image_url !!}" onerror="this.src='images/noimage.gif';" alt="ĐÁ CẨM THẠCH" /></a>
+                  <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html" ><img src="{{ URL::asset('uploads') }}/{!! $row1->image_url !!}" alt="{!! $row1->name !!}" /></a>
                   <h4 class="pro-tit"> <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html"> {!! $row1->name !!} </a> </h4>
                 </div>
                 <div class="caption">
                   <div class="price"><span class="txt">Giá </span><p class="number">{!! number_format($row1->price,0,",",".") !!} <span>đ/m<sup>2</sup></span></p></div>
-                  <div class="contact"><span class="txt">Liên hệ </span><a href="tel:0909999999" class="number"><i class="fa fa fa-phone"></i></a></div>
+                  <div class="contact"><span class="txt">Liên hệ </span><a href="tel:{{ $settingArr['hot_line'] }}" class="number"><i class="fa fa fa-phone"></i></a></div>
                 </div>
               </div>
               @endforeach

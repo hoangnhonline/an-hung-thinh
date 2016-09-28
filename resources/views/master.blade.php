@@ -38,21 +38,12 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/owl.carousel2.4/owl.carousel.css') }}"/>
 <link rel="stylesheet" href="{{ URL::asset('assets/simplyscroll/jquery.simplyscroll.css') }}" media="all" type="text/css">
 <link rel="stylesheet" href="{{ URL::asset('assets/animate/animate.css') }}" media="all" type="text/css">
-<script type="text/javascript" src="{{ URL::asset('js/jquery.min.1.10.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/bootstrap.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/jquery-ui.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/fancybox/jquery.fancybox.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/menu/menumaker.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/myscript.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/owl.carousel2.4/owl.carousel.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/simplyscroll/jquery.simplyscroll.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/animate/wow.min.js') }}"></script>
-<script src="{{ URL::asset('assets/animate/wow_animate.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/script_scroll/plugins-scroll.js') }}"></script>
+
 
 <link href="{{ URL::asset('css/common.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet" type="text/css" media="(min-width: 980px)">
 <link href="{{ URL::asset('css/style_mobile.css') }}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{{ URL::asset('js/jquery.min.1.10.js') }}"></script>
 </head>
 
 
@@ -72,39 +63,30 @@
   
   @include('blocks.footer')
 
-<!--Back to Top--> 
-<script type="text/javascript">
-    $(window).scroll(function(){
-        if($(window).scrollTop()>50){
-            $('.scroll-top').show(500);
-        }else{
-            $('.scroll-top').hide(500);
-        }
-    });
-    $(document).ready(function(e) {
-        $('.scroll-top img').click(function(){
-            $('html, body').stop().animate({
-                scrollTop: 0
-                }, 500, function() {
-                $('#goTop').stop().animate({
-                top: '-100px'
-                }, 500);
-            });
-        })
-    });
-</script> 
-<!--End back to top-->
 <div class="scroll-top"> <img src="{{ URL::asset('images/icon-scroll-top.png') }}" alt="Lên đầu trang" /> </div>
 <!--scroll-top-->
-<div id='ads-left'>
+<div id='ads-left' class="hidden-xs hidden-sm">
   <div style='margin:0 0 5px 0; padding:0;position:fixed; left:0; top:175px;z-index: 999'>
-    <a href='#' target='_blank'><img border='0' src='http://anhungthinh.com.vn/wp-content/uploads/2016/08/banner-AHT-l.png' width='100'/></a>
+    <a href='#' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-l.png') }}" width='100'/></a>
   </div>
 </div>
-<div id='ads-right'>
+<div id='ads-right' class="hidden-xs hidden-sm">
   <div style='margin:0 0 5px 0; padding:0; position:fixed; right:0; top:175px;;z-index: 999'>
-    <a href='#' target='_blank'><img border='0' src='http://anhungthinh.com.vn/wp-content/uploads/2016/08/banner-AHT-r.png' width='100'/></a>
+    <a href='#' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-r.png') }}" width='100' /></a>
   </div>
 </div>
+
+<script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/bootstrap-3.2.0/js/jquery-ui.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/fancybox/jquery.fancybox.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/menu/menumaker.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/js/lazy.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/myscript.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/owl.carousel2.4/owl.carousel.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/simplyscroll/jquery.simplyscroll.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('assets/animate/wow.min.js') }}"></script>
+<script src="{{ URL::asset('assets/animate/wow_animate.js') }}"></script>
+
+<script type="text/javascript" src="{{ URL::asset('assets/script_scroll/plugins-scroll.js') }}"></script>
 </body>
 </html>

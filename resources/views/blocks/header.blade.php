@@ -1,13 +1,13 @@
 <div id="header" style="background:url('{{ URL::asset('images/16543300.png') }}') no-repeat;background-size: 100% 100%;">
-    <div class="banner"> <img src="{{ URL::asset('images/an-hung-thinh-banner.png') }}" style="width:100%;" alt="banner dagranit.vn"/>
-      <div class="logo_header"> <a href="./"> <img src="{{ Helper::showImage($settingArr['logo']) }}" height="100"> </a> </div>
+    <div class="banner"> <img data-original="{{ URL::asset('images/an-hung-thinh-banner.png') }}" style="width:100%;" alt="banner dagranit.vn" class="lazy"/>
+      <div class="logo_header"> <a href="{{ route('home') }}"> <img class="lazy" data-original="{{ Helper::showImage($settingArr['logo']) }}" height="100"> </a> </div>
       <div class="hotline" >{{ $settingArr['hot_line'] }}</div>
       <div class="box_icon">
         <div class="title">Follow us: </div>
-        <div class="icon"> <a href="https://www.facebook.com/" target="_blank"> <img src="{{ URL::asset('images/ico-face.png') }}" alt="Facebook" /> </a> </div>
-        <div class="icon"> <a href="https://twitter.com/" target="_blank"> <img src="{{ URL::asset('images/ico-tw.png') }}" alt="Twitter" /> </a> </div>
-        <div class="icon"> <a href="https://www.google.com/" target="_blank"> <img src="{{ URL::asset('images/ico-google.png') }}" alt="Google" /> </a> </div>
-        <div class="icon"> <a href="https://www.youtube.com/?gl=VN" target="_blank"> <img src="{{ URL::asset('images/ico-youtube.png') }}" alt="Youtube" /> </a> </div>
+        <div class="icon"> <a href="https://www.facebook.com/" target="_blank"> <img data-original="{{ URL::asset('images/ico-face.png') }}" alt="Facebook" class="lazy" /> </a> </div>
+        <div class="icon"> <a href="https://twitter.com/" target="_blank"> <img data-original="{{ URL::asset('images/ico-tw.png') }}" alt="Twitter" class="lazy"/> </a> </div>
+        <div class="icon"> <a href="https://www.google.com/" target="_blank"> <img data-original="{{ URL::asset('images/ico-google.png') }}" alt="Google" class="lazy"/> </a> </div>
+        <div class="icon"> <a href="https://www.youtube.com/?gl=VN" target="_blank"> <img data-original="{{ URL::asset('images/ico-youtube.png') }}" alt="Youtube" class="lazy"/> </a> </div>
         <div class="clear"></div>
       </div>
     </div>
@@ -45,7 +45,7 @@
   
   <div class="header-mobi">
   
-      <div class="logo"> <a href="{{ route('home') }}" data-role="none" title="Trang chủ"> <img src="{{ URL::asset('images/banner-mobi.jpg') }}"> </a> </div>
+      <div class="logo"> <a href="{{ route('home') }}" data-role="none" title="Trang chủ"> <img class="lazy" alt="banner dagranit.vn" data-original="{{ URL::asset('images/banner-mobi.jpg') }}"> </a> </div>
       
       <script>
         $(document).ready(function(){
@@ -93,18 +93,12 @@
               </ul>
             </li>
             <li><a href="{{ route('news-list', 'tu-van') }}" class="font_custom ">Tư vấn</a></li>
+            <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>        
+            <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>
             <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>
             <li><a href="{!! url('lien-he') !!}" class="font_custom ">Liên hệ</a></li>
           </ul>
-        </div>
-        <div class="search_box_hide">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
-            <span class="input-group-btn">
-              <button class="btn btn-info" type="button">Go!</button>
-            </span>
-          </div><!-- /input-group -->
-        </div>
+        </div>       
       </div>
 
   </div>
