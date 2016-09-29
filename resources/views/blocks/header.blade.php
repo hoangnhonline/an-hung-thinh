@@ -91,7 +91,7 @@
         <div class="menu-mobi">
           <ul>
             <li><a href="{{ route('home') }}">Trang chủ</a></li>
-            <li><a href="{!! url('gioi-thieu') !!}">Giới thiệu</a></li>
+            <li><a href="{{ route('gioithieu') }}">Giới thiệu</a></li>
             <li><a href="javascript:;">Sản phẩm</a>
               <ul>
                 <?php 
@@ -106,7 +106,7 @@
             <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>        
             <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>
             <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>
-            <li><a href="{!! url('lien-he') !!}" class="font_custom ">Liên hệ</a></li>
+            <li><a href="{{ route('lienhe') }}" class="font_custom ">Liên hệ</a></li>
           </ul>
         </div>       
       </div>
