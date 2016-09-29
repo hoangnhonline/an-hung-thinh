@@ -278,18 +278,18 @@ ul.product-info {
 ul.product-info li .name_product {
   font-family: fontten;
   color: #222;
-  font-size: 30px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 .product-info li {
   padding: 3px 0px;
   font-family: 'RobotoCondensedRegular';
-  font-size: 18px;
+  font-size: 15px;
   color: #555;
 }
 .product-info li .code {
   color: #258718;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
 }
 .product-info li .price {
@@ -507,3 +507,4 @@ ul.product-info li .name_product {
 .videonb {
   margin-bottom: 10px;
 }
+.fancybox-wrap { top: 100px !important; background-color: #fff; }
