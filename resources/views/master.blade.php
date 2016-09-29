@@ -137,6 +137,14 @@
 <script type="text/javascript" src="{{ URL::asset('assets/slick/slick.js') }}"></script>
 <script type="text/javascript">
   $(document).ready(function(){
+    $('a.load-box').on('click', function(){
+        var id = $(this).attr('data-value');
+        $.fancybox({        
+            autoSize: true,
+            href: "{{ route('load-box')}}?id=" + id,
+            type: 'ajax'
+        });
+    });
     $('.customers').slick({
       infinite: true,
       slidesToShow: 5,
@@ -173,6 +181,7 @@ function openface() {
     jQuery('.xopen').css('display', 'none');
     jQuery('.contact-face').css('bottom', '0');
 }
+
 </script>
 <div class="contact-face" style="">
         <div class="title_quancaog" style="background: #1f7c14;color: #fff;padding: 3px 10px;cursor:pointer;">
@@ -187,5 +196,6 @@ function openface() {
         </div>
     </div>
 </div>
+
 </body>
 </html>

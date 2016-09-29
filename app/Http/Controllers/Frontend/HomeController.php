@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Settings;
 use App\Models\ArticlesCate;
 use App\Models\Articles;
+use App\Models\Product;
 use App\Models\Backend\Pages;
 
 use Helper, File, Session, DB;
@@ -29,6 +30,12 @@ class HomeController extends Controller
     {
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
         return view('pages.lienhe', compact('settingArr'));
+    }
+    public function loadBox(Request $request)
+    {
+        $id = $request->id;
+        $detail = Product::find($id);        
+        return view('pages.load-box', compact('detail'));
     }
     public function detailPrice(Request $request)
     {

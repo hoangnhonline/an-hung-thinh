@@ -39,7 +39,7 @@
               @foreach($sp as $row1)
               <div class="item_product wow fadeInUp col-md-3 col-sm-4 col-xs-6"> 
                 <div class="images"> 
-                  <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html" ><img src="{{ URL::asset('uploads') }}/{!! $row1->image_url !!}" alt="{!! $row1->name !!}" /></a>
+                  <a class="load-box" data-value="{{ $row1->id }}" href="javascript:void(0)" ><img src="{{ URL::asset('uploads') }}/{!! $row1->image_url !!}" alt="{!! $row1->name !!}" /></a>
                   <h4 class="pro-tit"> <a href="san-pham/{!! $row1->slug !!}-{!! $row1->id !!}.html"> {!! $row1->name !!} </a> </h4>
                 </div>
                 <div class="caption">
