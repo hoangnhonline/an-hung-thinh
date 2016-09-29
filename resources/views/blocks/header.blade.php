@@ -101,8 +101,7 @@
               <li><a href="{!! route('loaisp', [$row->slug, $row->id]) !!}">{!! $row->name !!}</a> </li>
               @endforeach
               </ul>
-            </li>
-            <li><a href="{{ route('news-list', 'tu-van') }}" class="font_custom ">Tư vấn</a></li>
+            </li>            
             <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>        
             <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>
             <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>
