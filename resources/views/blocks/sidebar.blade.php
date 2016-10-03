@@ -37,10 +37,9 @@
             <div class="clear"></div>
           </div>
         </div>
-        <!--HỖ TRỢ TRỰC TUYẾN-->
         <div class="module_left">
           <div class="title">
-            <h2>Ý Kiến khách hàng</h2>
+            <h2>Ý kiến khách hàng</h2>
           </div>
           <div class="content" id="customer-comment">
               <div class="comment-content">
@@ -53,6 +52,28 @@
               </div>              
           </div>
         </div>
+        <!--HỖ TRỢ TRỰC TUYẾN-->
+        <div class="module_left">
+          <div class="title">
+            <h2>Kiến trúc sư tư vấn</h2>
+          </div>
+          <div class="content" id="customer-comment">
+            <?php 
+            $articlesArr = DB::table('articles')->where('cate_id', 7)->orderBy('id', 'desc')->limit(0,5);
+
+            ?>
+            @if($articlesArr->count() > 0)              
+              @foreach($articlesArr as $articles)
+              <div class="title-tuvan">
+                  <p>
+                    <a href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{{ $articles->title }}">{{ $articles->title }}</a>
+                  </p>
+              </div>
+              @endforeach
+              @endif                           
+          </div>
+        </div>
+        
         <!--HỖ TRỢ TRỰC TUYẾN-->
         <div class="module_left">
           <div class="title">

@@ -24,12 +24,11 @@
                 <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Giá bán : </span> <span class="price">{{ $row->price }}</span></li>
               </ul>
               
-              <div class="box-desc">
-                <h3 class="desc-tit">Chi tiết sản phẩm</h3>
-                <div class="desc-content">
+                              
+              <div class="desc-content">
                   {!! $row->description !!}
-                </div>
               </div>
+              
               
             </div>
           </div> 
