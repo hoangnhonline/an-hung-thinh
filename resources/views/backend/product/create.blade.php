@@ -56,6 +56,11 @@
                   <label>Tên sản phẩm <span class="red-star">*</span></label>
                   <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
                 </div>
+                <div class="form-group" >
+                  
+                  <label>Mã sản phẩm <span class="red-star">*</span></label>
+                  <input type="text" class="form-control" name="ma_sp" id="ma_sp" value="{{ old('ma_sp') }}">
+                </div>
                 <span class=""></span>
                 <div class="form-group">                  
                   <label>Slug <span class="red-star">*</span></label>                  

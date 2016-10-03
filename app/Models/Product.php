@@ -24,6 +24,6 @@ class Product extends Model  {
      *
      * @var array
      */
-    protected $fillable = ['name', 'slug', 'alias', 'is_hot', 'status', 'description', 'image_url', 'content', 'meta_title', 'meta_description', 'meta_keywords', 'custom_text', 'cate_id', 'price'];
+    protected $fillable = ['ma_sp', 'name', 'slug', 'alias', 'is_hot', 'status', 'description', 'image_url', 'content', 'meta_title', 'meta_description', 'meta_keywords', 'custom_text', 'cate_id', 'price'];
     
 }
