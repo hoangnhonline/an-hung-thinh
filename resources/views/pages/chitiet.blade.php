@@ -20,7 +20,7 @@
             <div class="col-sm-7">
               <ul class="product-info">
                 <li><h2 class="name_product">{!! $row->name !!}</h2></li>
-                <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Mã sản phẩm : </span> <span class="code">{!! $row->id !!}</span></li>
+                <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Mã sản phẩm : </span> <span class="code">{!! $row->ma_sp !!}</span></li>
                 <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Giá bán : </span> <span class="price">{{ $row->price }}</span></li>
               </ul>
               
