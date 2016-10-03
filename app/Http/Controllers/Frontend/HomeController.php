@@ -26,7 +26,8 @@ class HomeController extends Controller
         foreach ($a as $sp) {
             $id = $sp->id;
             $model = Product::find($id);
-            $price = $sp->price." "."đ/m2";
+            
+            $price = str_replace("đ/m2 đ/m2 đ/m2", "đ/m2", $sp->price);
             $model->price = $price;
             $model->save();
             
