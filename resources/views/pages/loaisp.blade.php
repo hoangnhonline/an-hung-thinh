@@ -38,7 +38,7 @@
                   <h4 class="pro-tit"> <a href="{!! route('chitietsp', [$row1->slug, $row1->id]) !!}"> {!! $row1->name !!} </a> </h4>
                 </div>
                 <div class="caption">
-                  <div class="price"><span class="txt">Giá </span><p class="number">{!! number_format($row1->price,0,",",".") !!} <span>đ/m<sup>2</sup></span></p></div>
+                  <div class="price"><span class="txt">Giá </span><p class="number">{{ $row1->price }}</p></div>
                   <div class="contact"><span class="txt">Liên hệ </span><a href="tel:{{ $settingArr['hot_line'] }}" class="number"><i class="fa fa fa-phone"></i></a></div>
                 </div>
               </div>

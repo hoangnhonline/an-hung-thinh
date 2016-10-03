@@ -6,7 +6,7 @@
       <ul class="product-info" style="padding-right: 0;">
         <li><h2 class="name_product">{{ $detail->name }}</h2></li>
         <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Mã sản phẩm : </span> <span class="code">{{ $detail->id }}</span></li>
-        <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Giá bán : </span> <span class="price">{!! number_format($detail->price,0,",",".") !!} <span>đ/m<sup>2</sup></span></span> </li>
+        <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Giá bán : </span> <span class="price">{{ $detail->price }}</span> </li>
       </ul>
     </div>
 </div>

@@ -21,7 +21,7 @@
               <ul class="product-info">
                 <li><h2 class="name_product">{!! $row->name !!}</h2></li>
                 <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Mã sản phẩm : </span> <span class="code">{!! $row->id !!}</span></li>
-                <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Giá bán : </span> <span class="price">{!! number_format($row->price,0,",",".") !!} VNĐ</span></li>
+                <li><span class="lbl"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Giá bán : </span> <span class="price">{{ $row->price }}</span></li>
               </ul>
               
               <div class="box-desc">
@@ -55,8 +55,8 @@
                   <h4 class="pro-tit"> <a href="{!! route('chitietsp', [$row2->slug, $row2->id]) !!}"> {!! $row2->name !!} </a> </h4>
                 </div>
                 <div class="caption">
-                  <div class="price"><span class="txt">Giá </span><p class="number">{!! number_format($row2->price,0,",",".") !!} <span>đ/m<sup>2</sup></span></p></div>
-                  <div class="contact"><span class="txt">Liên hệ </span><a href="tel:0909999999" class="number"><i class="fa fa fa-phone"></i></a></div>
+                  <div class="price"><span class="txt">Giá </span><p class="number">{{ $row2->price }}</p></div>
+                  <div class="contact"><span class="txt">Liên hệ </span><a href="tel:{{ $settingArr['hot_line'] }}" class="number"><i class="fa fa fa-phone"></i></a></div>
                 </div>
               </div>
               @endforeach

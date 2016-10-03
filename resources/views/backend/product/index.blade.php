@@ -75,7 +75,7 @@
                   <img class="img-thumbnail lazy" data-original="{{ Helper::showImage($item->image_url)}}" width="145">
                 </td>        
                 <td>                  
-                  <a href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}">{{ $item->name }} - {{ number_format($item->price,0,",",".") }} VNĐ</a>
+                  <a href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}">{{ $item->name }} - {{ $item->price }}</a>
                   
                   @if( $item->is_hot == 1 )
                   <img class="img-thumbnail" src="{{ URL::asset('be/dist/img/star.png')}}" alt="Nổi bật" title="Nổi bật" />
