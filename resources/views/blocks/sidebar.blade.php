@@ -59,7 +59,7 @@
           </div>
           <div class="content" id="customer-comment">
             <?php 
-            $articlesArr = DB::table('articles')->where('cate_id', 7)->orderBy('id', 'desc')->limit(0,5);
+            $articlesArr = DB::table('articles')->where('cate_id', 7)->orderBy('id', 'desc')->limit(0,5)->get();
 
             ?>
             @if($articlesArr->count() > 0)              
