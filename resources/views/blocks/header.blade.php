@@ -31,17 +31,28 @@
         </li>
         <li class="line">&nbsp;</li>
         <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>
-        <li class="line">&nbsp;</li>
-        <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>              
+        
          <li class="line">&nbsp;</li>
+		 <li>
+          <a href="javascript:void(0)" class="font_custom ">Thi công</a>
+          <ul>
+           
+            <li><a href="{{ route('news-list', 'thi-cong-bep') }}">Thi công bếp</a> </li>
+			<li><a href="{{ route('news-list', 'thi-cong-cau-thang') }}">Thi công cầu thang</a> </li>
+			<li><a href="{{ route('news-list', 'thi-cong-mat-tien') }}">Thi công mặt tiền</a> </li>
+			<li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank">Thi công xây dựng</a> </li>
+           
+          </ul>
+        </li> 
+		<li class="line">&nbsp;</li>
         <li>
           <a href="javascript:void(0)" class="font_custom ">Bảng giá</a>
           <ul>
             <?php 
-            $loaisp = DB::table('articles')->where('cate_id', 3)->orderBy('id')->get();
+            $loaisp = DB::table('category')->get();
             ?>
             @foreach($loaisp as $row)
-            <li><a href="{!! route('detail-price', [$row->slug, $row->id]) !!}">{!! $row->title !!}</a> </li>
+            <li><a href="{!! route('loaisp', [$row->slug, $row->id]) !!}">{!! $row->name !!}</a> </li>
             @endforeach
           </ul>
         </li>      

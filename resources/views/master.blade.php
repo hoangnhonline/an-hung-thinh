@@ -11,7 +11,6 @@
 <meta name="copyright" content="dagranit.vn" />
 <meta itemprop="name" content="dagranit.vn">
 <meta itemprop="description" content="dagranit.vn">
-<meta name="viewport" content="width=1200">
 <meta name="DC.title" content="dagranit.vn" />
 <meta name="DC.language" scheme="utf-8" content="vi" />
 <meta name="DC.identifier" content="index.html" />
