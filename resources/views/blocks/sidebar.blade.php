@@ -57,20 +57,30 @@
           <div class="title">
             <h2>Kiến trúc sư tư vấn</h2>
           </div>
-          <div class="content" id="customer-comment">
+          <div class="content" id="customer-comment" style="padding-top:8px">
+          <div class="clearfix"></div>
             <?php 
-            $articlesArr = DB::table('articles')->where('cate_id', 7)->orderBy('id', 'desc')->limit(0,5)->get();
+            $articlesArr = DB::table('articles')->where('cate_id', 7)->orderBy('id', 'desc')->paginate(5);
 
             ?>
             @if($articlesArr)              
+            <ul style="margin-top:6px">
               @foreach($articlesArr as $articles)
-              <div class="title-tuvan">
-                  <p>
-                    <a href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{{ $articles->title }}">{{ $articles->title }}</a>
-                  </p>
-              </div>
+              <li style="font-size: 14px;margin-top:2px;margin-bottom:8px">
+                <div class="col-md-5" style="padding-left:3px;padding-right:3px">
+                  <img src="{{ Helper::showImage($articles->image_url) }}" class="img-responsive img-thumbnail">
+                </div>
+                <div class="col-md-7" style="padding-left:0px;padding-right:0px">
+                    <a style="color: #444; " href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{{ $articles->title }}">{{ $articles->title }}</a>
+                </div>
+                               <div class="clearfix"></div>
+              </li>
               @endforeach
-              @endif                           
+              
+              </ul>
+              @endif         
+              <div class="clearfix"></div>
+
           </div>
         </div>
         
