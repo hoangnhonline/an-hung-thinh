@@ -75,7 +75,7 @@
                   <img class="img-thumbnail lazy" data-original="{{ Helper::showImage($item->image_url)}}" width="145">
                 </td>        
                 <td>  
-                  Mã SP : {{ $detail->ma_sp }}                 <br>
+                  Mã SP : {{ $item->ma_sp }}                 <br>
                   <a href="{{ route( 'product.edit', [ 'id' => $item->id ]) }}">{{ $item->name }} - {{ $item->price }}</a>
                   
                   @if( $item->is_hot == 1 )
