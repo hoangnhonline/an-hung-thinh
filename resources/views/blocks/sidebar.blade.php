@@ -62,7 +62,7 @@
             $articlesArr = DB::table('articles')->where('cate_id', 7)->orderBy('id', 'desc')->limit(0,5)->get();
 
             ?>
-            @if($articlesArr->count() > 0)              
+            @if($articlesArr)              
               @foreach($articlesArr as $articles)
               <div class="title-tuvan">
                   <p>
