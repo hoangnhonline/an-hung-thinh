@@ -169,14 +169,13 @@ class ProductController extends Controller
         $this->validate($request,[            
             'cate_id' => 'required',            
             'name' => 'required',
-            'price' => 'required|numeric',            
+            'price' => 'required',            
             'slug' => 'required|unique:product,slug,'.$dataArr['id'],
         ],
         [            
             'cate_id.required' => 'Bạn chưa chọn danh mục',            
             'name.required' => 'Bạn chưa nhập tiêu đề',
-            'price.required' => 'Bạn chưa nhập giá tiền',
-            'price.numeric' => 'Bạn chưa nhập đúng giá tiền',
+            'price.required' => 'Bạn chưa nhập giá tiền',            
             'slug.required' => 'Bạn chưa nhập slug',
             'slug.unique' => 'Slug đã được sử dụng.'
         ]);       
