@@ -22,16 +22,6 @@ class HomeController extends Controller
     */
     public function index(Request $request)
     {        
-        $a = Product::all();
-        foreach ($a as $sp) {
-            $id = $sp->id;
-            $model = Product::find($id);
-            
-            $price = str_replace("đ/m2 đ/m2 đ/m2", "đ/m2", $sp->price);
-            $model->price = $price;
-            $model->save();
-            
-        }
         $about = Pages::find(1);
         $settingArr = Settings::whereRaw('1')->lists('value', 'name');
         return view('pages.index', compact('settingArr', 'about'));
