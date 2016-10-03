@@ -196,6 +196,44 @@ function openface() {
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog" >
+  <div class="modal-dialog modal-sm">
 
+    <!-- Modal content-->
+    <div class="modal-content">      
+      <div class="modal-body" style="height:150px;text-align:center;vertical-align:middle;margin-top:20px" >
+        <h2>{{ $settingArr['hot_line'] }}</h2>
+
+        <p style="margin-top:20px;font-size:18px">Đang gọi...</p>
+
+      </div>
+      <div class="modal-footer" style="text-align:center">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color:#950025">Kết thúc</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<style type="text/css">
+  .modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}  
+</style>
 </body>
 </html>
