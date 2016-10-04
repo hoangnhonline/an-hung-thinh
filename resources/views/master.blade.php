@@ -131,8 +131,7 @@
 <script type="text/javascript" src="{{ URL::asset('assets/myscript.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/owl.carousel2.4/owl.carousel.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/simplyscroll/jquery.simplyscroll.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/animate/wow.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('assets/animate/wow_animate.js') }}"></script>
+
 <script type="text/javascript" src="{{ URL::asset('assets/script_scroll/plugins-scroll.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('assets/slick/slick.js') }}"></script>
 <script type="text/javascript">

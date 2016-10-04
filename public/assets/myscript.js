@@ -47,7 +47,7 @@
  //Script fancybox and wow
 	$(document).ready(function() {
 		$("a.fancybox").fancybox();
-		new WOW().init();	
+		//new WOW().init();	
 	})
 /*---------------------*/
 
