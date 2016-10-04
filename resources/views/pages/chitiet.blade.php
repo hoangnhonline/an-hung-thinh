@@ -55,7 +55,7 @@
                 </div>
                 <div class="caption">
                   <div class="price"><span class="txt">Giá </span><p class="number">{{ $row2->price }}</p></div>
-                  <div class="contact"><span class="txt">Liên hệ </span><a href="javascript:void(0)" class="number" data-toggle="modal" data-target="#myModal"><i class="fa fa fa-phone"></i></a></div>
+                  <div class="contact"><span class="txt">Liên hệ </span><a href="tel:{{ $settingArr['hot_line'] }}" class="number"><i class="fa fa fa-phone"></i></a></div>
                 </div>
               </div>
               @endforeach
