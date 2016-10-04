@@ -64,12 +64,12 @@
 <!--scroll-top-->
 <div id='ads-left' class="hidden-xs hidden-sm">
   <div style='margin:0 0 5px 0; padding:0;position:fixed; left:0; top:175px;z-index: 999'>
-    <a href='#' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-l.png') }}" width='100'/></a>
+    <a href='http://anhungthinh.com.vn/bang-gia/nha-pho/' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-l.png') }}" width='100'/></a>
   </div>
 </div>
 <div id='ads-right' class="hidden-xs hidden-sm">
   <div style='margin:0 0 5px 0; padding:0; position:fixed; right:0; top:175px;;z-index: 999'>
-    <a href='#' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-r.png') }}" width='100' /></a>
+    <a href='http://anhungthinh.com.vn/bang-gia/nha-pho/' target='_blank'><img border='0' src="{{ URL::asset('images/banner-AHT-r.png') }}" width='100' /></a>
   </div>
 </div>
 <style type="text/css">

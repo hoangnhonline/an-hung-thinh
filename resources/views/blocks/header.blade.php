@@ -33,18 +33,19 @@
         <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>
         
          <li class="line">&nbsp;</li>
+         <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank">Thi công xây dựng</a></li>
+         <li class="line">&nbsp;</li>
 		 <li>
-          <a href="javascript:void(0)" class="font_custom ">Thi công</a>
+          <a href="javascript:void(0)" class="font_custom ">Thi công đá</a>
           <ul>
            
             <li><a href="{{ route('news-list', 'thi-cong-bep') }}">Thi công bếp</a> </li>
 			<li><a href="{{ route('news-list', 'thi-cong-cau-thang') }}">Thi công cầu thang</a> </li>
 			<li><a href="{{ route('news-list', 'thi-cong-mat-tien') }}">Thi công mặt tiền</a> </li>
-			<li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank">Thi công xây dựng</a> </li>
-           
+			
           </ul>
         </li> 
-		<li class="line">&nbsp;</li>
+		  <li class="line">&nbsp;</li>
         <li>
           <a href="javascript:void(0)" class="font_custom ">Bảng giá</a>
           <ul>
@@ -113,8 +114,16 @@
               @endforeach
               </ul>
             </li>            
-            <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>        
+            <li><a href="http://anhungthinh.com.vn/category/tu-van-thiet-ke-kien-truc/" target="_blank" class="font_custom ">Tư vấn – Thiết kế kiến trúc</a></li>  
             <li><a href="http://anhungthinh.com.vn/category/thi-cong-xay-dung/" target="_blank" class="font_custom ">Thi công xây dựng</a></li>
+            <li><a href="javascript:;">Thi công đá</a>
+              <ul>
+                <li><a href="{{ route('news-list', 'thi-cong-bep') }}">Thi công bếp</a> </li>
+                <li><a href="{{ route('news-list', 'thi-cong-cau-thang') }}">Thi công cầu thang</a> </li>
+                <li><a href="{{ route('news-list', 'thi-cong-mat-tien') }}">Thi công mặt tiền</a> </li>
+              </ul>
+            </li>       
+            
             <li><a href="{{ route('bang-gia') }}" class="font_custom ">Bảng giá</a></li>
             <li><a href="{{ route('lienhe') }}" class="font_custom ">Liên hệ</a></li>
           </ul>

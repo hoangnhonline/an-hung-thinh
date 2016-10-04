@@ -71,7 +71,7 @@
                   <img src="{{ Helper::showImage($articles->image_url) }}" class="img-responsive img-thumbnail">
                 </div>
                 <div class="col-md-7" style="padding-left:0px;padding-right:0px">
-                    <a style="color: #444; " href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{{ $articles->title }}">{{ $articles->title }}</a>
+                    <a style="color: blue;font-weight: bold " href="{{ route('news-detail', ['slug' => $articles->slug, 'id' => $articles->id]) }}" title="{{ $articles->title }}">{{ $articles->title }}</a>
                 </div>
                                <div class="clearfix"></div>
               </li>
